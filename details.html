@@ -1,0 +1,138 @@
+<html lang="ar">
+
+<head>
+    <link rel="stylesheet" href="/css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="/css/itme.css">
+    <title>براند ستور</title>
+</head>
+
+<body>
+    <header>
+        <div class="container top-nav">
+            <a href="#" class="logo"><img src="img/image.png" alt=""></a>
+            <form action="" class="search">
+                <input type="search" placeholder="ابحث عن المنتج ...">
+                <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+
+            </form>
+
+            <div class="cart_header">
+                <div onclick="open_cart()" class="icon_cart">
+                    <i class="fa-solid fa-bag-shopping"></i>
+                    <span class="count_item">0</span>
+                </div>
+                <div class="tottal_price">
+                    <p>:في العربه</p>
+                    <p class="price_cart_head">$0</p>
+                </div>
+            </div>
+        </div>
+
+        <nav>
+            <div class="linkes container">
+                <i onclick="open_menu()" class="fa-solid fa-bars btn_open_menu"></i>
+                <ul id="menu">
+                    <span onclick="close_menu()" class="bg-overlay"></span>
+                    <i onclick="close_menu()" class="fa-regular fa-circle-xmark btn_close_menu"></i>
+                    <li><a href="index.html">الصفحه الرئسية</a></li>
+                    <li><a href="/all_products.html">كل المنتجات</a></li>
+                    <li><a href="">معلومات عنا</a></li>
+                    <li><a href="">التواصل</a></li>
+                </ul>
+
+                <div class="loging_signup">
+                    <a href="#"><i class="fa-solid fa-user-plus"></i> <span>تسجيل دخول</span></a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="cart">
+        <span onclick="close_menu()" class="bg-overlay"></span>
+        <div class="top_cart">
+            <h3>العربه<span class="cont_itme_cart">(0المنتجات في العربه)</span></h3>
+            <span onclick="close_cart()" class="close_cart"><i class="fa-regular fa-circle-xmark"></i></span>
+        </div>
+
+        <div class="itmes_in_cart">
+
+        </div>
+        <div class="bottom_cart">
+            <div class="total">
+                <p>المجموع</p>
+                <p class="price_cart_total">0</p>
+            </div>
+
+            <div class="button_cart">
+                <a href="/checkout.html" class="btn_cart">طلب المنتجات</a>
+                <button onclick="close_cart()" class="btn_cart trans_bg">اشتري المزيد</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="itme_dateil">
+        <div id="container" class="container">
+            <div class="img_item">
+                <div class="big_img">
+                    <img id="bigimg" src="" alt="Big Image">
+                </div>
+                <div class="sm_imgs" id="sm_imgs"></div>
+            </div>
+            <div class="detalis_item">
+                <h1 class="name" id="product_name">اسم المنتج</h1>
+                <div class="stars" id="product_stars"></div>
+                <div class="price">
+                    <p> <span id="product_price"></span></p>
+                    <p class="old-price" style="display:none;"> السعر السابق <span id="product_old_price"></span></p>
+                </div>
+                <h5>متوفر :<span id="product_availability"></span></h5>
+                <p class="text_p" id="product_description">وصف المنتج</p>
+                <button id="add_to_cart_btn">Add to Cart<span><i class="fa-solid fa-cart-arrow-down"></i></span></button>
+                <div class="icons">
+                    <span><i class="fa-regular fa-heart"></i></span>
+                    <span><i class="fa-solid fa-sliders"></i></span>
+                    <span><i class="fa-solid fa-print"></i></span>
+                    <span><i class="fa-solid fa-share-nodes"></i></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <section class="slide slide_sele">
+        <div class="container">
+            <div class="sale_sec mySwiper">
+                <div class="top_slide">
+                    <h2><span>عروووض</span> لفتره محدوده </h2>
+                </div>
+
+                <div id="swiper_itmes_sale" class="products swiper-wrapper">
+
+                </div>
+
+                <div class="swiper-button-next btn_swip"></div>
+                <div class="swiper-button-prev btn_swip"></div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <a href="#">
+            <p><span>739770762</span> للتواصل او الاستفسار</p>
+        </a>
+    </footer>
+
+    <script src="/js/details.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="/js/swiper.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/itmes_home.js"></script>
+</body>
+
+</html>
