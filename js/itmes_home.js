@@ -39,7 +39,7 @@ function displayProducts(products, containerId) {
                     <img class="img_hover" src="${product.img_hover}" alt="">
                     ${percent_dise !== null ? `<span class="sale_present">%${percent_dise}</span>` : ''}
                 </div>
-                <h3 class="name_product"><a href="details.html">${product.name}</a></h3>
+                <h3 class="name_product"><a href="./details.html">${product.name}</a></h3>
                 <div class="stars">
                     <i class="fa-solid fa-star"></i>
                     <i class="fa-solid fa-star"></i>
