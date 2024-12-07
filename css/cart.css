@@ -1,0 +1,209 @@
+body {
+  font-family: "Arial", sans-serif;
+  background-color: #f9f9f9;
+  margin: 0;
+  padding: 0;
+}
+/* إعدادات التنسيق العامة */
+.cart-section {
+  padding: 30px;
+  background-color: #f8f9fa;
+  border-radius: 10px;
+}
+
+.cart-table {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 30px;
+}
+
+.cart-table th,
+.cart-table td {
+  padding: 10px;
+  text-align: center;
+  border: 1px solid #ddd;
+  background-color: #fff;
+}
+
+.cart-table th {
+  background-color: #0077cc;
+  color: white;
+}
+
+/* تنسيق الصور */
+.cart-table td img {
+  width: 50px; /* تغيير حجم الصورة */
+  height: 50px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+/* إدخال الكميات */
+.cart-table td input {
+  width: 50px;
+  padding: 5px;
+  text-align: center;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+}
+
+.cart-summary {
+  margin-top: 30px;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  text-align: end;
+}
+
+.cart-summary h3 {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.cart-summary p {
+  font-size: 1.2em;
+  color: #333;
+}
+/* تنسيق حقل الكوبون */
+.coupon-section {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.coupon-section label {
+  font-size: 1.2em;
+  color: #333;
+  font-weight: bold;
+  flex: 1;
+}
+
+.coupon-input-container {
+  position: relative;
+  width: 100%
+}
+
+.coupon-input {
+  padding: 12px;
+  font-size: 1.1em;
+  width: 100%;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding-right: 40px; /* مساحة للأيقونة */
+  transition: .3s ease;
+}
+
+.coupon-input:focus {
+  outline: none;
+  border-color: #0077cc;
+  box-shadow: 0 0 5px rgba(0, 119, 204, 0.5);
+}
+
+.apply-coupon-btn {
+  background-color: #0077cc;
+  color: white;
+  padding: 12px 20px;
+  font-size: 1.1em;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.apply-coupon-btn:hover {
+  background-color: #005fa3;
+}
+
+/* تنسيق الأيقونة داخل حقل النص */
+.coupon-status {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  font-size: 1.5em;
+  color: transparent;
+}
+
+.coupon-status.success {
+  color: green;
+}
+
+.coupon-status.error {
+  color: red;
+}
+
+/* تنسيق زر الحذف */
+.remove-btn {
+  background: none;
+  border: none;
+  color: #dc3545;
+  font-size: 1.2em;
+  cursor: pointer;
+}
+
+.remove-btn:hover {
+  color: #a31e2b;
+}
+
+/* تنسيق الأزرار في ملخص السلة */
+.btn-primary {
+  display: flex;
+  background-color: #0077cc;
+  color: white;
+  padding: 12px 20px;
+  font-size: 1.1em;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s ease;
+  margin-top: 10px;
+}
+
+.btn-primary:hover {
+  background-color: #005fa3;
+}
+
+@keyframes slideIn {
+  0% {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* تطبيق الأنميشن على عناصر السلة */
+.cart-section,
+.cart-summary {
+  animation: slideIn 0.5s ease-out; /* أنميشن الانزلاق */
+}
+
+/* عنصر الكوبون */
+.coupon-container {
+  animation: slideIn 0.5s ease-out; /* أنميشن الانزلاق */
+}
+
+/* وضع الأنميشن عند ظهور رسالة الكوبون */
+#coupon-status {
+  animation: slideIn 0.5s ease-out; /* أنميشن للرسالة */
+}
+
+/* تحسين ظهور الأزرار والمحتويات الأخرى */
+button,
+input[type="number"] {
+  transition: transform 0.3s ease-in-out;
+}
+
+button:hover,
+input[type="number"]:hover {
+  transform: scale(1.05); /* تكبير العناصر عند التمرير */
+}
