@@ -1,0 +1,487 @@
+/* section Hero ================================================================*/
+
+.hero {
+  background: linear-gradient(
+    to right,
+    #75afd6,
+    #2980b9
+  ); /* ألوان الأزرق المتدرجة */
+  color: white;
+  padding: 100px 0;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  font-size: 1.3em;
+  margin-bottom: 30px;
+}
+
+.hero .btn-primary {
+  background-color: #0077cc;
+  color: white;
+  padding: 15px 30px;
+  font-size: 1.2em;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.hero .btn-primary:hover {
+  background-color: #005fa3;
+}
+
+/* تنسيق المنتجات المميزة */
+.featured-products {
+  padding: 60px 0;
+  background-color: #fff;
+}
+
+.featured-products h2 {
+  text-align: center;
+  font-size: 2.2em;
+  margin-bottom: 40px;
+}
+
+/* section categories ==============================================================*/
+/* العنوان */
+.section-title {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+/* القسم */
+.categories-section {
+  padding: 20px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.categories-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* صفين */
+  grid-template-rows: repeat(2, 1fr); /* صفان */
+  gap: 20px;
+  max-height: calc(2 * 200px + 20px); /* الحد الأقصى لارتفاع صفين مع الفجوات */
+  overflow: hidden; /* إخفاء العناصر الزائدة */
+  padding: 20px;
+  width: 90%;
+  margin-inline: auto;
+}
+
+.category-card {
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.category-card.tall {
+  grid-column: span 2;
+}
+
+.category-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.category-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+}
+
+.category-overlay {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  font-size: 1.2rem;
+  padding: 5px 10px;
+  border-radius: 5px;
+  text-transform: uppercase;
+}
+
+/* swiper ============================================================= */
+
+/* تنسيق الـ Swiper */
+.swiper-container {
+  width: 90%;
+  margin-inline: auto;
+  height: 400px;
+  overflow: hidden;
+  padding: 15px;
+  padding-top: 30px;
+}
+
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.product-card {
+  width: 250px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.product-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  transition: 0.3s ease;
+}
+
+.product-info {
+  padding: 15px;
+}
+
+.product-card:hover {
+  scale: 1.01;
+  transform: translateY(-5px);
+}
+
+.product-info h3 {
+  font-size: 1.2em;
+  margin: 10px 0;
+}
+
+.product-info p {
+  font-size: 1em;
+  color: #888;
+}
+
+button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+/* features  =================================================== */
+/* section Hero ================================================================*/
+
+.hero {
+  background: linear-gradient(
+    to right,
+    #75afd6,
+    #2980b9
+  ); /* ألوان الأزرق المتدرجة */
+  color: white;
+  padding: 100px 0;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  font-size: 1.3em;
+  margin-bottom: 30px;
+}
+
+.hero .btn-primary {
+  background-color: #0077cc;
+  color: white;
+  padding: 15px 30px;
+  font-size: 1.2em;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.hero .btn-primary:hover {
+  background-color: #005fa3;
+}
+
+/* تنسيق المنتجات المميزة */
+.featured-products {
+  padding: 60px 0;
+  background-color: #fff;
+}
+
+.featured-products h2 {
+  text-align: center;
+  font-size: 2.2em;
+  margin-bottom: 40px;
+}
+
+/* section categories ==============================================================*/
+/* العنوان */
+.section-title {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+/* القسم */
+.categories-section {
+  padding: 20px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.categories-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* صفين */
+  grid-template-rows: repeat(2, 1fr); /* صفان */
+  gap: 20px;
+  max-height: calc(2 * 200px + 20px); /* الحد الأقصى لارتفاع صفين مع الفجوات */
+  overflow: hidden; /* إخفاء العناصر الزائدة */
+  padding: 20px;
+  width: 90%;
+  margin-inline: auto;
+}
+
+.category-card {
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.category-card.tall {
+  grid-column: span 2;
+}
+
+.category-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.category-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+}
+
+.category-overlay {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  font-size: 1.2rem;
+  padding: 5px 10px;
+  border-radius: 5px;
+  text-transform: uppercase;
+}
+
+/* swiper ============================================================= */
+
+/* تنسيق الـ Swiper */
+.swiper-container {
+  width: 90%;
+  margin-inline: auto;
+  height: 400px;
+  overflow: hidden;
+  padding: 15px;
+  padding-top: 30px;
+}
+
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.product-card {
+  width: 250px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.product-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  transition: 0.3s ease;
+}
+
+.product-info {
+  padding: 15px;
+}
+
+.product-card:hover {
+  scale: 1.01;
+  transform: translateY(-5px);
+}
+
+.product-info h3 {
+  font-size: 1.2em;
+  margin: 10px 0;
+}
+
+.product-info p {
+  font-size: 1em;
+  color: #888;
+}
+
+button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+/* features  =================================================== */
+
+/* تصميم القسم */
+.features-section {
+  padding: 50px 20px;
+  background-color: #f9f9f9;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* تضمن توزيع البطاقات بشكل متجاوب */
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* تقليل حجم البطاقات */
+.feature-card {
+  width: 100%; /* جعل العرض قابل للتكيف */
+  max-width: 250px; /* تحديد الحد الأقصى للحجم */
+  height: 250px;
+  perspective: 1000px; /* لتفعيل تأثير الـ 3D */
+}
+
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.6s ease;
+}
+
+.card-front,
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  padding: 5px;
+}
+
+.card-front {
+  z-index: 2;
+  font-size: 1rem;
+}
+
+.card-back {
+  transform: rotateY(180deg); /* الوجه الخلفي يبدأ مقلوبًا */
+  background-color: #fff;
+  color: black;
+  border: 2px solid #007bff;
+  padding: 20px;
+  font-size: 1rem;
+  text-align: center;
+}
+
+/* أيقونات Font Awesome */
+.feature-icon {
+  font-size: 3rem;
+  color: #007bff;
+  margin-bottom: 15px;
+}
+
+/* الميلان عند التمرير */
+.feature-card:hover .card-inner {
+  transform: rotateZ(-5deg); /* الميلان أثناء التمرير */
+  transition: transform 0.3s ease-in-out;
+}
+
+/* الميلان مع القلب */
+.feature-card:hover .card-inner.flipped {
+  transform: rotateY(180deg) rotateZ(5deg); /* الميلان مع الحفاظ على الدوران */
+}
+
+/* عند الضغط على البطاقة */
+.card-inner.flipped {
+  transform: rotateY(180deg); /* الدوران عند الضغط */
+  transition: transform 0.6s ease-in-out;
+}
+
+/* ضمان التصميم المتجاوب */
+@media (max-width: 768px) {
+  .features-grid {
+    grid-template-columns: repeat(
+      4,
+      1fr
+    ); /* عند الشاشات الصغيرة، البطاقة تكون في صفين */
+  }
+  .feature-card {
+    height: 150px;
+  }
+  .feature-icon {
+    font-size: 2rem;
+  }
+  .card-back,
+  .card-front {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .features-grid {
+    grid-template-columns: repeat(
+      2,
+      1fr
+    ); /* عند الشاشات الصغيرة جدًا، البطاقة تكون في صف واحد */
+  }
+  .feature-card {
+    height: 150px;
+  }
+}
