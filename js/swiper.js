@@ -8,7 +8,7 @@ const swiper = new Swiper('.swiper-container', {
   },
   breakpoints: {
     640: {
-      slidesPerView: 3,  // عرض منتج واحد فقط على الشاشات الصغيرة
+      slidesPerView: 2,  // عرض منتج واحد فقط على الشاشات الصغيرة
       spaceBetween: 20,
     },
     768: {
