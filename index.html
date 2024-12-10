@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>إلكترونيات بلو</title>
+    <title>براند ستور</title>
 
     <!-- Font Awesome -->
     <link
@@ -25,7 +25,7 @@
     <header>
       <div class="container">
         <div class="logo">
-          <a href="./index.html">إلكترونيات<span> بلو</span></a>
+          <a href="./index.html">براند ستور</a>
         </div>
         <div class="search-container">
           <input
@@ -42,7 +42,11 @@
             <li class="active"><a href="./index.html">الرئيسية</a></li>
             <li><a href="./html/products.html">المنتجات</a></li>
             <li><a href="./html/offers.html">العروض</a></li>
-            <li><a href="./html/cart.html">السله</a></li>
+            <li>
+              <a href="./html/cart.html"
+                ><i class="fa-solid fa-cart-shopping"></i
+              ></a>
+            </li>
             <li>
               <a href="./html/login.html"><i class="fas fa-user"></i></a>
             </li>
@@ -52,123 +56,76 @@
     </header>
 
     <main>
-      <section class="hero">
-        <div class="container">
-          <h1>مرحبًا بك في <span>إلكترونيات بلو</span></h1>
-          <p>اكتشف أحدث الأجهزة الإلكترونية بأفضل الأسعار.</p>
-          <a href="html/offers.html" class="btn-primary">تسوق الآن</a>
+      <!-- قسم البانر -->
+      <section class="hero " id="home">
+        <div class="hero-content">
+          <h1>أفضل العروض على الإلكترونيات</h1>
+          <p>اكتشف أحدث الأجهزة بأسعار لا تقارن</p>
+          <a href="#categories" class="btn">تسوق الآن</a>
         </div>
       </section>
 
-      <section class="categories-section">
-        <h1 class="section-title">استكشف الفئات</h1>
-        <div class="categories-container">
-          <!-- فئة كبيرة -->
-          <div class="category-card category-large">
-            <a href="#">
-              <img src="./img/product1.jpg" alt="فئة 1" />
-              <div class="category-overlay">إلكترونيات</div>
-            </a>
-          </div>
-          <!-- فئة صغيرة -->
-          <div class="category-card">
-            <a href="#">
-              <img src="./img/product2.jpg" alt="فئة 2" />
-              <div class="category-overlay">ملابس</div>
-            </a>
-          </div>
-          <!-- فئة صغيرة -->
-          <div class="category-card">
-            <a href="#">
-              <img src="./img/product3.jpg" alt="فئة 3" />
-              <div class="category-overlay">مستحضرات</div>
-            </a>
-          </div>
-          <!-- فئة كبيرة -->
-          <div class="category-card category-large">
-            <a href="#">
-              <img src="./img/product2.jpg" alt="فئة 4" />
-              <div class="category-overlay">أثاث</div>
-            </a>
-          </div>
-        </div>
-      </section>
-
-      <section class="featured-products-section">
-        <h1 class="section-title">المنتجات المميزة</h1>
-        <div class="swiper-container">
+      <!-- قسم الفئات -->
+      <section class="categories" id="categories">
+        <h2 class="section-title">تسوق حسب الفئة</h2>
+        <div class="swiper-categoty">
           <div class="swiper-wrapper">
-            <!-- المنتج 1 -->
-            <div class="swiper-slide">
-              <div class="product-card">
-                <img src="./img/product1.jpg" alt="منتج 1" />
-                <div class="product-info">
-                  <h3>اسم المنتج 1</h3>
-                  <p>وصف المنتج 1</p>
-                  <p>السعر: 100 ريال</p>
-                  <button>إضافة إلى السلة</button>
-                </div>
-              </div>
-            </div>
-            <!-- المنتج 2 -->
-            <div class="swiper-slide">
-              <div class="product-card">
-                <img src="./img/product2.jpg" alt="منتج 2" />
-                <div class="product-info">
-                  <h3>اسم المنتج 2</h3>
-                  <p>وصف المنتج 2</p>
-                  <p>السعر: 200 ريال</p>
-                  <button>إضافة إلى السلة</button>
-                </div>
-              </div>
-            </div>
-            <!-- المنتج 3 -->
-            <div class="swiper-slide">
-              <div class="product-card">
-                <img src="./img/product3.jpg" alt="منتج 3" />
-                <div class="product-info">
-                  <h3>اسم المنتج 3</h3>
-                  <p>وصف المنتج 3</p>
-                  <p>السعر: 150 ريال</p>
-                  <button>إضافة إلى السلة</button>
-                </div>
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <div class="product-card">
-                <img src="./img/product3.jpg" alt="منتج 3" />
-                <div class="product-info">
-                  <h3>اسم المنتج 3</h3>
-                  <p>وصف المنتج 3</p>
-                  <p>السعر: 150 ريال</p>
-                  <button>إضافة إلى السلة</button>
-                </div>
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <div class="product-card">
-                <img src="./img/product3.jpg" alt="منتج 3" />
-                <div class="product-info">
-                  <h3>اسم المنتج 3</h3>
-                  <p>وصف المنتج 3</p>
-                  <p>السعر: 150 ريال</p>
-                  <button>إضافة إلى السلة</button>
-                </div>
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <div class="product-card">
-                <img src="./img/product3.jpg" alt="منتج 3" />
-                <div class="product-info">
-                  <h3>اسم المنتج 3</h3>
-                  <p>وصف المنتج 3</p>
-                  <p>السعر: 150 ريال</p>
-                  <button>إضافة إلى السلة</button>
-                </div>
-              </div>
-            </div>
-            <!-- أضف المزيد من المنتجات هنا -->
+            <a href="#" class="swiper-slide category-card">
+              <img src="./img/laptop.jpg" alt="لابتوبات" />
+              <h3>لابتوبات</h3>
+            </a>
+            <a href="#" class="swiper-slide category-card">
+              <img src="./img/camara.jpg" alt="كاميرات" />
+              <h3>كاميرات</h3>
+            </a>
+            <a href="#" class="swiper-slide category-card">
+              <img src="./img/laptop.jpg" alt="لابتوبات" />
+              <h3>لابتوبات</h3>
+            </a>
+            <a href="#" class="swiper-slide category-card">
+              <img src="./img/camara.jpg" alt="كاميرات" />
+              <h3>كاميرات</h3>
+            </a>
+
+            <a href="#" class="swiper-slide category-card">
+              <img src="./img/camara.jpg" alt="كاميرات" />
+              <h3>كاميرات</h3>
+            </a>
           </div>
+        </div>
+      </section>
+
+      <!-- قسم المنتجات الأكثر مبيعًا -->
+      <section class="best-sellers right" id="best-sellers">
+        <h2 class="section-title">المنتجات الأكثر مبيعًا</h2>
+        <div class="products-grid">
+          <!-- بطاقة منتج -->
+          <div class="product-card">
+            <img src="./img/product1.jpg" alt="منتج 1" />
+            <h3>اسم المنتج</h3>
+            <p>50 ريال</p>
+            <button>إضافة إلى السلة</button>
+          </div>
+          <div class="product-card">
+            <img src="./img/product2.jpg" alt="منتج 2" />
+            <h3>اسم المنتج</h3>
+            <p>70 ريال</p>
+            <button>إضافة إلى السلة</button>
+          </div>
+          <div class="product-card">
+            <img src="./img/product3.jpg" alt="منتج 3" />
+            <h3>اسم المنتج</h3>
+            <p>120 ريال</p>
+            <button>إضافة إلى السلة</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- قسم العروض -->
+      <section class="offers" id="offers">
+        <div class="offer-banner">
+          <h3>عروض لفتره محدودة</h3>
+          <a href="#categories" class="btn">تسوق العروض</a>
         </div>
       </section>
     </main>
@@ -184,6 +141,7 @@
     <script src="./js/swiper.js"></script>
 
     <!-- js  -->
+    <script src="./js/index.js"></script>
     <script src="./js/main.js"></script>
   </body>
 </html>
