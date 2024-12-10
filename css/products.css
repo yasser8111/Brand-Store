@@ -1,0 +1,105 @@
+
+/* products ================================================================ */
+
+/* تنسيق القسم */
+.products {
+  background: #f8f8f8;
+  padding: 2rem;
+  
+}
+
+/* عنوان القسم */
+.products .section-title {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 1.8rem;
+  color: #2563eb;
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+/* الشبكة لتنسيق المنتجات */
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 1rem;
+  padding: 0 1rem;
+}
+
+/* تصميم البطاقة */
+.product-card {
+  text-align: center;
+  padding: .5rem;
+  border-radius: 10px;
+  background: #f9fafb;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: 0.3s ease;
+  min-width: 13 0px;
+  animation: fadeIn .6s ease-in-out;
+}
+
+.product-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* صورة المنتج */
+.product-card img {
+  width: 100%;
+  max-width: 120px;
+  height: auto;
+  margin-bottom: 0.5rem;
+  border-radius: 5px;
+}
+
+/* اسم المنتج */
+.product-card h3 {
+  font-size: 1rem;
+  color: #333;
+}
+
+/* الوصف */
+.product-card .description {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+/* السعر */
+.product-card .price {
+  color: #000;
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+
+.products .more {
+  display: flex;
+  justify-content: end;
+  padding-top: 10px;
+  margin-right: 20px;
+}
+
+.more .btn {
+  align-items: center;
+  background: #fff;
+  border-radius: 5px;
+  border: 0;
+  padding: 5px 15px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  transition: all 0.3s ease;
+}
+
+.more .btn:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

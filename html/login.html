@@ -1,93 +1,134 @@
 <!DOCTYPE html>
 <html lang="ar">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>تسجيل الدخول / إنشاء حساب - إلكترونيات بلو</title>
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <!-- CSS -->
-  <link rel="stylesheet" href="../css/styles.css">
-  <link rel="stylesheet" href="../css/login.css">
-</head>
-<body>
-  <header>
-    <div class="container"><div class="logo">
-      <a href="../index.html">إلكترونيات<span> بلو</span></a>
-    </div>
-    <div class="search-container">
-      <input
-        type="text"
-        class="search-input"
-        placeholder="ابحث عن منتج..."
-      />
-      <button class="search-btn">
-        <i class="fas fa-search"></i>
-      </button>
-    </div>
-      <nav>
-        <ul class="nav-links">
-          <li><a href="../index.html">الرئيسية</a></li>
-          <li><a href="./products.html">المنتجات</a></li>
-          <li><a href="./offers.html">العروض</a></li>
-          <li><a href="./cart.html">السله</a></li>
-          <li>
-            <a href="./login.html"><i class="fas fa-user"></i></a>
-          </li>
-        </ul>
-      </nav>
-    </div>
-  </header>
-
-  <main>
-    <section class="auth-section">
-      <div class="auth-container">
-        <div class="login-form form active">
-          <h2>تسجيل الدخول</h2>
-          <form action="#" method="POST">
-            <div class="form-group">
-              <label for="login-email">البريد الإلكتروني</label>
-              <input type="email" id="login-email" name="login-email" required />
-            </div>
-            <div class="form-group">
-              <label for="login-password">كلمة المرور</label>
-              <input type="password" id="login-password" name="login-password" required />
-            </div>
-            <button type="submit" class="btn-primary">تسجيل الدخول</button>
-            <p>ليس لديك حساب؟ <a href="#" class="switch-form">إنشاء حساب</a></p>
-          </form>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>تسجيل الدخول / إنشاء حساب - إلكترونيات بلو</title>
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/styles.css" />
+    <link rel="stylesheet" href="../css/login.css" />
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <div class="logo">
+          <a href="../index.html">براند ستور</a>
         </div>
-  
-        <div class="register-form form" id="register-section">
-          <h2>إنشاء حساب</h2>
-          <form action="#" method="POST">
-            <div class="form-group">
-              <label for="register-name">الاسم الكامل</label>
-              <input type="text" id="register-name" name="register-name" required />
-            </div>
-            <div class="form-group">
-              <label for="register-email">البريد الإلكتروني</label>
-              <input type="email" id="register-email" name="register-email" required />
-            </div>
-            <div class="form-group">
-              <label for="register-password">كلمة المرور</label>
-              <input type="password" id="register-password" name="register-password" required />
-            </div>
-            <button type="submit" class="btn-primary">إنشاء حساب</button>
-            <p>هل لديك حساب؟ <a href="#" class="switch-form">تسجيل الدخول</a></p>
-          </form>
+        <div class="search-container">
+          <input
+            type="text"
+            class="search-input"
+            placeholder="ابحث عن منتج..."
+          />
+          <button class="search-btn">
+            <i class="fas fa-search"></i>
+          </button>
         </div>
+        <nav>
+          <ul class="nav-links">
+            <li><a href="../index.html">الرئيسية</a></li>
+            <li><a href="./products.html">المنتجات</a></li>
+            <li><a href="./offers.html">العروض</a></li>
+            <li>
+              <a href="./cart.html"
+                ><i class="fa-solid fa-cart-shopping"></i
+              ></a>
+            </li>
+            <li>
+              <a href="./login.html"><i class="fas fa-user"></i></a>
+            </li>
+          </ul>
+        </nav>
       </div>
-    </section>
-  </main>
-  
-  <footer>
-    <div class="container">
-      <p>© 2024 إلكترونيات بلو. جميع الحقوق محفوظة.</p>
-    </div>
-  </footer>
+    </header>
 
-  <script src="../js/main.js"></script>
-  <script src="../js/login.js"></script>
-</body>
+    <main>
+      <section class="auth-section">
+        <div class="auth-container">
+          <div class="form-wrapper">
+            <!-- نموذج تسجيل الدخول -->
+            <div class="login-form form active">
+              <h2>تسجيل الدخول</h2>
+              <form action="#" method="POST">
+                <div class="form-group">
+                  <label for="login-email">البريد الإلكتروني</label>
+                  <input
+                    type="email"
+                    id="login-email"
+                    name="login-email"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="login-password">كلمة المرور</label>
+                  <input
+                    type="password"
+                    id="login-password"
+                    name="login-password"
+                    required
+                  />
+                </div>
+                <button type="submit" class="btn-primary">تسجيل الدخول</button>
+                <p>
+                  ليس لديك حساب؟ <a href="#" class="switch-form">إنشاء حساب</a>
+                </p>
+              </form>
+            </div>
+
+            <!-- نموذج إنشاء حساب -->
+            <div class="register-form form">
+              <h2>إنشاء حساب</h2>
+              <form action="#" method="POST">
+                <div class="form-group">
+                  <label for="register-name">الاسم الكامل</label>
+                  <input
+                    type="text"
+                    id="register-name"
+                    name="register-name"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="register-email">البريد الإلكتروني</label>
+                  <input
+                    type="email"
+                    id="register-email"
+                    name="register-email"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="register-password">كلمة المرور</label>
+                  <input
+                    type="password"
+                    id="register-password"
+                    name="register-password"
+                    required
+                  />
+                </div>
+                <button type="submit" class="btn-primary">إنشاء حساب</button>
+                <p>
+                  هل لديك حساب؟ <a href="#" class="switch-form">تسجيل الدخول</a>
+                </p>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container">
+        <p>© 2024 إلكترونيات بلو. جميع الحقوق محفوظة.</p>
+      </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/login.js"></script>
+  </body>
 </html>
