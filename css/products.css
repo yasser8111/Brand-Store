@@ -2,7 +2,6 @@
 
 /* تنسيق القسم */
 .products {
-  background: #f8f8f8;
   padding: 2rem;
 }
 
@@ -11,7 +10,7 @@
   text-align: center;
   margin-bottom: 2rem;
   font-size: 1.8rem;
-  color: #2563eb;
+  color: #e15215;
   animation: fadeIn 0.4s ease-in-out;
 }
 
@@ -117,6 +116,7 @@
 }
 
 .filter-button {
+  animation: fadeIn .8s ease;
   background-color: #909090;
   color: #fff;
   border: none;
@@ -158,7 +158,7 @@
 /* القائمة */
 .filter-menu {
   position: fixed;
-  top: 50%;
+  top: 60%;
   left: 50%;
   transform: translate(-50%, -60%) scale(0.8);
   background: #f8f8f8;
@@ -205,13 +205,13 @@
 }
 
 .filter-item.selected {
-  border: 3px solid #007bff;
-  background-color: #e6f7ff;
+  border: 3px solid #e15215;
+  background-color: #ffefc7;
 }
 
 .filter-item i {
   font-size: 24px;
-  color: #007bff;
+  color: #e15215;
   margin-bottom: 10px;
 }
 
@@ -245,7 +245,7 @@
 }
 
 .color-option.selected {
-  border: 3px solid #007bff;
+  border: 3px solid #e15215;
 }
 
 /* Responsiveness */
@@ -349,9 +349,9 @@
 
 .pagination button:hover {
   border: none;
-  background-color: #007bff; /* خلفية زرقاء عند التمرير */
+  background-color: #e15215; /* خلفية زرقاء عند التمرير */
   color: #fff; /* نص أبيض */
-  box-shadow: 0 6px 15px rgba(0, 123, 255, 0.2); /* ظل أزرق عند التمرير */
+  box-shadow: 0 6px 10px rgba(225,82,21, 0.3);
 }
 
 .pagination button.disabled {
@@ -365,6 +365,37 @@
 /* تأثير التمرير على الأزرار */
 .pagination span.active,
 .pagination span:hover {
-  border: 2px solid #007bff;
-  box-shadow: 0 6px 10px rgba(0, 123, 255, 0.15);
+  border: 2px solid #e15215;
+  box-shadow: 0 6px 10px rgba(225,82,21, 0.3);
+}
+
+/* circles ============================================= */
+
+.product-card ,
+.pagination ,
+.more .btn{
+  background-color: rgba(255, 255, 255, .7);
+  backdrop-filter: blur(10px);
+}
+
+
+.background-circle1 {
+  position: absolute;
+  bottom: 0; /* لتجاوز الحدود السفلية قليلاً */
+  right: -100px; /* لتجاوز الحدود اليمنى قليلاً */
+  width: 300px; /* حجم الدائرة */
+  height: 300px; /* حجم الدائرة */
+  background-color: #ff9800; /* لون الدائرة */
+  border-radius: 50%; /* لتحويل المربع إلى دائرة */
+  z-index: -1; /* خلف كل العناصر الأخرى */
+}
+.background-circle2 {
+  position: absolute;
+  top: 30%; /* لتجاوز الحدود السفلية قليلاً */
+  left: -200px; /* لتجاوز الحدود اليمنى قليلاً */
+  width: 500px; /* حجم الدائرة */
+  height: 500px; /* حجم الدائرة */
+  background-color: #ff9800; /* لون الدائرة */
+  border-radius: 50%; /* لتحويل المربع إلى دائرة */
+  z-index: -1; /* خلف كل العناصر الأخرى */
 }

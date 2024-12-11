@@ -39,7 +39,7 @@ window.onload = function() {
       const brightness = getBrightness(color);
       
       // تحديد لون النص بناءً على سطوع اللون
-      const textColor = brightness > 128 ? '#000000' : '#ffffff'; // إذا كان اللون فاتحًا يجعل النص أسود، والعكس
+      const textColor = brightness > 256 ? '#000000' : '#ffffff'; // إذا كان اللون فاتحًا يجعل النص أسود، والعكس
 
       // استخدام gradient مع الشفافية
       categoryCard.style.backgroundImage = `linear-gradient(to bottom right, ${color} 0%, ${secondaryColor} 50%, rgba(255, 255, 255, 0.5) 100%)`;

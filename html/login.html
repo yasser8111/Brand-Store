@@ -14,11 +14,9 @@
     <link rel="stylesheet" href="../css/login.css" />
   </head>
   <body>
+
     <header>
       <div class="container">
-        <div class="logo">
-          <a href="../index.html">براند ستور</a>
-        </div>
         <div class="search-container">
           <input
             type="text"
@@ -48,78 +46,59 @@
     </header>
 
     <main>
-      <section class="auth-section">
-        <div class="auth-container">
-          <div class="form-wrapper">
-            <!-- نموذج تسجيل الدخول -->
-            <div class="login-form form active">
-              <h2>تسجيل الدخول</h2>
-              <form action="#" method="POST">
-                <div class="form-group">
-                  <label for="login-email">البريد الإلكتروني</label>
-                  <input
-                    type="email"
-                    id="login-email"
-                    name="login-email"
-                    required
-                  />
-                </div>
-                <div class="form-group">
-                  <label for="login-password">كلمة المرور</label>
-                  <input
-                    type="password"
-                    id="login-password"
-                    name="login-password"
-                    required
-                  />
-                </div>
-                <button type="submit" class="btn-primary">تسجيل الدخول</button>
-                <p>
-                  ليس لديك حساب؟ <a href="#" class="switch-form">إنشاء حساب</a>
-                </p>
-              </form>
-            </div>
 
+      <section class="auth-section">
+        <div class="background-img">
+          <div class="auth-container">
+            <!-- نموذج تسجيل الدخول -->
+            <div class="login-form form">
+              <div class="form-wrapper">
+                <h2>تسجيل الدخول</h2>
+                <form action="#" method="POST">
+                  <div class="form-group">
+                    <label for="login-email">البريد الإلكتروني</label>
+                    <input type="email" id="login-email" name="login-email" required />
+                  </div>
+                  <div class="form-group">
+                    <label for="login-password">كلمة المرور</label>
+                    <input type="password" id="login-password" name="login-password" required />
+                  </div>
+                  <button type="submit" class="btn-primary">تسجيل الدخول</button>
+                  <p>
+                    ليس لديك حساب؟ <span class="switch-form">إنشاء حساب</span>
+                  </p>
+                </form>
+              </div>
+            </div>
+          
             <!-- نموذج إنشاء حساب -->
             <div class="register-form form">
-              <h2>إنشاء حساب</h2>
-              <form action="#" method="POST">
-                <div class="form-group">
-                  <label for="register-name">الاسم الكامل</label>
-                  <input
-                    type="text"
-                    id="register-name"
-                    name="register-name"
-                    required
-                  />
-                </div>
-                <div class="form-group">
-                  <label for="register-email">البريد الإلكتروني</label>
-                  <input
-                    type="email"
-                    id="register-email"
-                    name="register-email"
-                    required
-                  />
-                </div>
-                <div class="form-group">
-                  <label for="register-password">كلمة المرور</label>
-                  <input
-                    type="password"
-                    id="register-password"
-                    name="register-password"
-                    required
-                  />
-                </div>
-                <button type="submit" class="btn-primary">إنشاء حساب</button>
-                <p>
-                  هل لديك حساب؟ <a href="#" class="switch-form">تسجيل الدخول</a>
-                </p>
-              </form>
+              <div class="form-wrapper">
+                <h2>إنشاء حساب</h2>
+                <form action="#" method="POST">
+                  <div class="form-group">
+                    <label for="register-name">الاسم الكامل</label>
+                    <input type="text" id="register-name" name="register-name" required />
+                  </div>
+                  <div class="form-group">
+                    <label for="register-email">البريد الإلكتروني</label>
+                    <input type="email" id="register-email" name="register-email" required />
+                  </div>
+                  <div class="form-group">
+                    <label for="register-password">كلمة المرور</label>
+                    <input type="password" id="register-password" name="register-password" required />
+                  </div>
+                  <button type="submit" class="btn-primary">إنشاء حساب</button>
+                  <p>
+                    هل لديك حساب؟ <span class="switch-form">تسجيل الدخول</span>
+                  </p>
+                </form>
+              </div>
             </div>
           </div>
         </div>
       </section>
+
     </main>
 
     <footer>
