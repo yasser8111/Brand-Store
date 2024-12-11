@@ -20,22 +20,30 @@ const swiperCategoty = new Swiper(".swiper-categoty", {
   },
 });
 
-const swiperContainer = new Swiper(".swiper-container", {
-  slidesPerView: 4, // عدد العناصر في العرض الأكبر
-  spaceBetween: 20, // المسافة بين العناصر
+
+const swiperAbout = new Swiper('.swiper-about', {
+  loop: true,
+  slidesPerView: 2,
   navigation: {
-    nextEl: ".swiper-button-next", // زر التنقل للأمام
-    prevEl: ".swiper-button-prev", // زر التنقل للخلف
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true,
+  },
+  autoplay: {
+    delay: 5000,
   },
   breakpoints: {
     1024: {
-      slidesPerView: 3, // عرض 3 منتجات
+      slidesPerView: 5, // عرض 3 منتجات
     },
     768: {
-      slidesPerView: 2, // عرض منتجين
+      slidesPerView: 4, // عرض منتجين
     },
     576: {
-      slidesPerView: 1, // عرض منتج واحد فقط
+      slidesPerView: 3, // عرض منتج واحد فقط
     },
   },
 });

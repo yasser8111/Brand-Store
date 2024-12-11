@@ -103,3 +103,154 @@
     transform: translateY(0);
   }
 }
+
+@media(width<500px){
+  .products {
+    padding: .5rem;
+  }
+}
+
+/* fillter ============================================================== */
+
+
+.filter-section {
+  position: relative;
+  text-align: center;
+  margin: 20px;
+}
+
+.filter-button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 18px;
+  cursor: pointer;
+  width: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.filter-button:hover {
+  background-color: #0056b3;
+}
+
+/* خلفية معتمة */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 9;
+  display: none;
+}
+
+.overlay.active {
+  display: block;
+}
+
+/* القائمة */
+.filter-menu {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -60%) scale(0.8);
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  width: 90%;
+  max-width: 400px;
+  display: none;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px;
+  z-index: 10;
+  opacity: 0;
+  transition: transform 0.4s ease, opacity 0.4s ease;
+}
+
+.filter-menu.active {
+  display: flex;
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.filter-menu.hide {
+  opacity: 0;
+  transform: translate(-50%, -60%) scale(0.8);
+  transition: transform 0.4s ease, opacity 0.4s ease;
+}
+
+.filter-item {
+  flex: 1 1 calc(50% - 10px);
+  text-align: center;
+  padding: 10px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  cursor: pointer;
+  position: relative;
+}
+
+.filter-item:hover {
+  transform: translateY(-5px);
+  background-color: #f1f1f1;
+}
+
+.filter-item.selected {
+  border: 3px solid #007bff;
+  background-color: #e6f7ff;
+}
+
+.filter-item i {
+  font-size: 24px;
+  color: #007bff;
+  margin-bottom: 10px;
+}
+
+.filter-item span {
+  display: block;
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+}
+
+/* لون التحديد */
+.color-picker {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.color-option {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 2px solid #fff;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.color-option:hover {
+  transform: scale(1.2);
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+}
+
+.color-option.selected {
+  border: 3px solid #007bff;
+}
+
+/* Responsiveness */
+@media (min-width: 768px) {
+  .filter-item {
+    flex: 1 1 calc(33.33% - 10px);
+  }
+}

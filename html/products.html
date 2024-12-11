@@ -26,7 +26,7 @@
             class="search-input"
             placeholder="ابحث عن منتج..."
           />
-          <button class="search-btn" >
+          <button class="search-btn">
             <i class="fas fa-search"></i>
           </button>
         </div>
@@ -35,8 +35,11 @@
             <li><a href="../index.html">الرئيسية</a></li>
             <li><a href="./products.html">المنتجات</a></li>
             <li><a href="./offers.html">العروض</a></li>
-            <li><a href="./cart.html"><i class="fa-solid fa-cart-shopping"></i
-              ></a></li>
+            <li>
+              <a href="./cart.html"
+                ><i class="fa-solid fa-cart-shopping"></i
+              ></a>
+            </li>
             <li>
               <a href="./login.html"><i class="fas fa-user"></i></a>
             </li>
@@ -46,6 +49,51 @@
     </header>
 
     <main>
+      <section class="filter-section">
+        <button class="filter-button">
+          <i class="fa-solid fa-filter"></i>
+          فلتر
+        </button>
+        <div class="overlay"></div>
+        <div class="filter-menu">
+          <!-- عناصر القائمة -->
+          <div class="filter-item" data-icon="fa-solid fa-laptop">
+            <i class="fa-solid fa-laptop"></i>
+            <span>أجهزة</span>
+          </div>
+          <div class="filter-item" data-icon="fa-solid fa-mobile-alt">
+            <i class="fa-solid fa-mobile-alt"></i>
+            <span>هواتف</span>
+          </div>
+          <div class="filter-item" data-icon="fa-solid fa-headphones">
+            <i class="fa-solid fa-headphones"></i>
+            <span>إكسسوارات</span>
+          </div>
+          <div class="filter-item" data-icon="fa-solid fa-tv">
+            <i class="fa-solid fa-tv"></i>
+            <span>شاشات</span>
+          </div>
+          <div class="filter-item" data-icon="fa-solid fa-camera">
+            <i class="fa-solid fa-camera"></i>
+            <span>كاميرات</span>
+          </div>
+          <div class="filter-item" data-icon="fa-solid fa-gamepad">
+            <i class="fa-solid fa-gamepad"></i>
+            <span>ألعاب</span>
+          </div>
+    
+          <!-- اختيار اللون -->
+          <div class="color-picker">
+            <div class="color-option" style="background-color: #4fa4ff;" data-color="#007bff"></div>
+            <div class="color-option" style="background-color: #28a745;" data-color="#28a745"></div>
+            <div class="color-option" style="background-color: #ffc107;" data-color="#ffc107"></div>
+            <div class="color-option" style="background-color: #dc3545;" data-color="#dc3545"></div>
+            <div class="color-option" style="background-color: #f5f5f5;" data-color="#b8b8b8"></div>
+            <div class="color-option" style="background-color: #383838;" data-color="#383838"></div>
+          </div>
+        </div>
+      </section>
+    
 
       <section class="products">
         <h2 class="section-title">المنتجات</h2>
@@ -99,7 +147,6 @@
           <button class="btn">...المزيد</button>
         </div>
       </section>
-
     </main>
 
     <footer>
