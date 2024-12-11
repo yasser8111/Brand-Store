@@ -3,13 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>إلكترونيات بلو</title>
+    <title>منتجاتنا - براند ستور</title>
 
     <!-- Font Awesome -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
     />
+
     <!-- css  -->
     <link rel="stylesheet" href="../css/styles.css" />
     <link rel="stylesheet" href="../css/products.css" />
@@ -81,19 +82,42 @@
             <i class="fa-solid fa-gamepad"></i>
             <span>ألعاب</span>
           </div>
-    
+
           <!-- اختيار اللون -->
           <div class="color-picker">
-            <div class="color-option" style="background-color: #4fa4ff;" data-color="#007bff"></div>
-            <div class="color-option" style="background-color: #28a745;" data-color="#28a745"></div>
-            <div class="color-option" style="background-color: #ffc107;" data-color="#ffc107"></div>
-            <div class="color-option" style="background-color: #dc3545;" data-color="#dc3545"></div>
-            <div class="color-option" style="background-color: #f5f5f5;" data-color="#b8b8b8"></div>
-            <div class="color-option" style="background-color: #383838;" data-color="#383838"></div>
+            <div
+              class="color-option"
+              style="background-color: #4fa4ff"
+              data-color="#007bff"
+            ></div>
+            <div
+              class="color-option"
+              style="background-color: #28a745"
+              data-color="#28a745"
+            ></div>
+            <div
+              class="color-option"
+              style="background-color: #ffc107"
+              data-color="#ffc107"
+            ></div>
+            <div
+              class="color-option"
+              style="background-color: #dc3545"
+              data-color="#dc3545"
+            ></div>
+            <div
+              class="color-option"
+              style="background-color: #f5f5f5"
+              data-color="#dadada"
+            ></div>
+            <div
+              class="color-option"
+              style="background-color: #383838"
+              data-color="#383838"
+            ></div>
           </div>
         </div>
       </section>
-    
 
       <section class="products">
         <h2 class="section-title">المنتجات</h2>
@@ -145,6 +169,20 @@
         </div>
         <div class="more">
           <button class="btn">...المزيد</button>
+        </div>
+
+        <div class="pagination" id="pagination">
+          <button id="prev-page" class="disabled">
+            <i class="fa-solid fa-caret-left"></i>
+          </button>
+
+          <span class="active">1</span>
+          <span>2</span>
+          <span>3</span>
+
+          <button id="next-page">
+            <i class="fa-solid fa-caret-right"></i>
+          </button>
         </div>
       </section>
     </main>

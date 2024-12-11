@@ -1,11 +1,9 @@
-
 /* products ================================================================ */
 
 /* تنسيق القسم */
 .products {
   background: #f8f8f8;
   padding: 2rem;
-  
 }
 
 /* عنوان القسم */
@@ -20,7 +18,7 @@
 /* الشبكة لتنسيق المنتجات */
 .products-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   gap: 1rem;
   padding: 0 1rem;
 }
@@ -28,13 +26,13 @@
 /* تصميم البطاقة */
 .product-card {
   text-align: center;
-  padding: .5rem;
+  padding: 0.5rem;
   border-radius: 10px;
   background: #f9fafb;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   transition: 0.3s ease;
   min-width: 13 0px;
-  animation: fadeIn .6s ease-in-out;
+  animation: fadeIn 0.6s ease-in-out;
 }
 
 .product-card:hover {
@@ -104,14 +102,13 @@
   }
 }
 
-@media(width<500px){
+@media (width<500px) {
   .products {
-    padding: .5rem;
+    padding: 0.5rem;
   }
 }
 
 /* fillter ============================================================== */
-
 
 .filter-section {
   position: relative;
@@ -120,7 +117,7 @@
 }
 
 .filter-button {
-  background-color: #007bff;
+  background-color: #909090;
   color: #fff;
   border: none;
   border-radius: 5px;
@@ -136,7 +133,7 @@
 }
 
 .filter-button:hover {
-  background-color: #0056b3;
+  background-color: #b3b3b3;
 }
 
 /* خلفية معتمة */
@@ -148,11 +145,14 @@
   height: 100%;
   background: rgba(0, 0, 0, 0.5);
   z-index: 9;
-  display: none;
+  opacity: 0; /* البداية مخفية */
+  transition: opacity 0.4s ease; /* تأثير التلاشي */
+  display: none; /* إخفاء كامل عند انتهاء التدرج */
 }
 
 .overlay.active {
-  display: block;
+  display: block; /* يظهر العنصر */
+  opacity: 1; /* شفاف بنسبة كاملة */
 }
 
 /* القائمة */
@@ -161,7 +161,7 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -60%) scale(0.8);
-  background-color: #fff;
+  background: #f8f8f8;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   width: 90%;
@@ -191,7 +191,7 @@
   flex: 1 1 calc(50% - 10px);
   text-align: center;
   padding: 10px;
-  background-color: #f9f9f9;
+  background-color: #fff;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, background-color 0.3s ease;
@@ -201,7 +201,7 @@
 
 .filter-item:hover {
   transform: translateY(-5px);
-  background-color: #f1f1f1;
+  background-color: #f8f8f8;
 }
 
 .filter-item.selected {
@@ -225,7 +225,7 @@
 /* لون التحديد */
 .color-picker {
   display: flex;
-  gap: 10px;
+  gap: 15px;
   justify-content: center;
   margin-top: 20px;
 }
@@ -253,4 +253,118 @@
   .filter-item {
     flex: 1 1 calc(33.33% - 10px);
   }
+}
+
+@keyframes fadeInScale {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -60%) scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+@keyframes fadeOutScale {
+  0% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -60%) scale(0.8);
+  }
+}
+
+.filter-menu.active {
+  animation: fadeInScale 0.4s ease forwards;
+}
+
+.filter-menu.hide {
+  animation: fadeOutScale 0.4s ease forwards;
+}
+
+@keyframes fadeInBackground {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOutBackground {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+/* للخلفية المعتمة */
+.overlay.active {
+  animation: fadeInBackground 0.4s ease forwards;
+}
+
+.overlay.hide {
+  animation: fadeOutBackground 0.4s ease forwards;
+}
+
+
+
+/* pagination =========================================================== */
+/* التنقل بين الصفحات */
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin: 30px 0;
+  padding: 12px 20px;
+  background-color: #fff; /* خلفية ناعمة */
+  border-radius: 20px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  margin-inline: 20px;
+}
+
+.pagination button,
+.pagination span {
+  
+  border: 2px solid #ddd; /* حدود خفيفة لأزرار الصفحات */
+  background-color: #ffffff; /* خلفية بيضاء ناعمة */
+  color: #333; /* نص داكن */
+  font-size: 18px;
+  font-weight: 600;
+  border-radius: 10px; /* الأزرار دائرية */
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* تأثير الظل */
+}
+
+.pagination button:hover {
+  border: none;
+  background-color: #007bff; /* خلفية زرقاء عند التمرير */
+  color: #fff; /* نص أبيض */
+  box-shadow: 0 6px 15px rgba(0, 123, 255, 0.2); /* ظل أزرق عند التمرير */
+}
+
+.pagination button.disabled {
+  border: none;
+  background-color: #f1f3f5; /* خلفية فاتحة للأزرار المعطلة */
+  color: #aaa; /* نص فاتح */
+  cursor: not-allowed; /* إظهار اليد المعطلة */
+  box-shadow: none; /* إزالة الظلال */
+}
+
+/* تأثير التمرير على الأزرار */
+.pagination span.active,
+.pagination span:hover {
+  border: 2px solid #007bff;
+  box-shadow: 0 6px 10px rgba(0, 123, 255, 0.15);
 }

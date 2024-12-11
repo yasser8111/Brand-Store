@@ -1,4 +1,3 @@
-
 /* hero ================================================================= */
 
 .hero {
@@ -14,7 +13,7 @@
 
 .hero-content h1,
 .hero-content p,
-.hero-content .btn{
+.hero-content .btn {
   animation: fadeIn 0.6s ease-in-out;
 }
 
@@ -43,6 +42,7 @@
 /* category =============================================================== */
 
 .categories {
+  animation: fadeIn 0.8s ease-in-out;
   background: #fff;
   overflow: hidden;
 }
@@ -63,6 +63,7 @@
   padding: 1rem;
   border-radius: 10px;
   background: #f9fafb;
+  backdrop-filter: blur(10px);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   min-width: 130px;
@@ -104,12 +105,10 @@
 /* الشبكة لتنسيق المنتجات */
 .products-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
   gap: 1.5rem;
   padding: 0 1rem;
 }
-
-/* تصميم البطاقة */
 .product-card {
   text-align: center;
   padding: 1rem;
@@ -117,41 +116,67 @@
   background: #f9fafb;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   transition: 0.3s ease;
+  overflow: hidden;
+  position: relative; /* لضمان أن السعر يظل داخل البطاقة */
+  min-height: 300px; /* جعل البطاقة مرنة مع حد أدنى للارتفاع */
 }
 
+/* تأثير التحويم */
 .product-card:hover {
+  background: #fff;
   transform: translateY(-10px);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-/* صورة المنتج */
 .product-card img {
-  width: 100%;
   max-width: 120px;
-  height: auto;
-  margin-bottom: 0.5rem;
+  max-height: 120px;
   border-radius: 5px;
+  object-fit: cover; /* ضمان ملاءمة الصورة داخل الحيز المحدد */
 }
 
 /* اسم المنتج */
 .product-card h3 {
+  width: 100%;
   font-size: 1rem;
   color: #333;
-  margin: 0.5rem 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 1; /* الحد الأقصى لعدد الأسطر */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis; /* إضافة النقاط عند تجاوز النص */
 }
 
 /* الوصف */
 .product-card .description {
+  text-align: end;
   font-size: 0.9rem;
   color: #555;
-  margin-bottom: 0.5rem;
+  margin-bottom: 1rem; /* تباعد بين الوصف والسعر */
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* الحد الأقصى لعدد الأسطر */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis; /* إضافة النقاط عند تجاوز النص */
+  padding: 0 10px; /* إضافة تباعد داخلي */
 }
 
 /* السعر */
+
 .product-card .price {
-  color: #000;
-  font-size: 0.9rem;
+  display: flex;
+}
+
+.product-card p {
+  color: #000000;
+  font-size: 1.3rem;
   font-weight: bold;
+  border-radius: 5px;
+}
+
+.product-card .old-price {
+  font-size: 0.8rem;
+  color: gray;
 }
 
 .products .more {
@@ -178,17 +203,31 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-@media(width<500px){
+@media (width<500px) {
   .products {
     padding: 1rem;
   }
   .products-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     gap: 1rem;
     padding: 0;
   }
+  .more .btn {
+    margin-right: 0;
+  }
+  .product-card {
+    background: #fff;
+  }
+  .product-card h3 {
+    width: 100%;
+    font-size: 0.8rem;
+  }
 
+  /* الوصف */
+  .product-card .description {
+    font-size: 0.7rem;
+  }
 }
 
 /* offers ================================================================== */
@@ -258,7 +297,7 @@
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   padding: 10px;
-  width:150px;
+  width: 150px;
   height: 150px;
   text-align: center;
   transition: transform 0.3s;
@@ -279,10 +318,9 @@
   margin-bottom: 10px;
 }
 
-.feature-box p{
+.feature-box p {
   font-size: 12px;
 }
-
 
 @keyframes fadeIn {
   from {
@@ -294,3 +332,14 @@
     transform: translateY(0);
   }
 }
+
+
+
+
+
+
+
+
+
+
+
