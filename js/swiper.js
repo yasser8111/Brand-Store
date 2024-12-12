@@ -34,16 +34,16 @@ const swiperAbout = new Swiper(".swiper-about", {
     clickable: true,
   },
   autoplay: {
-    delay: 3000,
+    delay: 5000,
   },
   breakpoints: {
-    1024: {
+    1050: {
       slidesPerView: 5, // عرض 3 منتجات
     },
-    720: {
+    850: {
       slidesPerView: 4, // عرض منتجين
     },
-    576: {
+    600: {
       slidesPerView: 3, // عرض منتج واحد فقط
     },
   },

@@ -45,10 +45,12 @@
   padding: 0.75rem 2rem;
   font-size: 1rem;
   border-radius: 5px;
+  background: rgba(0, 0, 0, 0.2);
   transition: all 0.3s ease;
 }
 
 .hero-content .btn:hover {
+  background: rgba(0, 0, 0, 0.5);
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
 }
 
@@ -272,11 +274,26 @@
 /* offers ================================================================== */
 
 .offers {
-  background: linear-gradient(135deg, var(--main-color) , var(--color-3));
+  background-image: url("../img/offers.jpg"); /* استبدل your-image-url.jpg برابط الصورة */
+  background-size: cover; /* لجعل الصورة تغطي الخلفية بالكامل */
+  background-position: center; /* لتوسيط الصورة */
+  background-repeat: no-repeat; /* لمنع تكرار الصورة */
+  background-attachment: fixed;
   position: relative;
-  padding: 2rem 0;
+  height: 300px;
   text-align: center;
   color: var(--font-color-1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.offer-banner {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  padding: 30px;
+  border-radius: 10px;
+  border: 5px solid rgba(255, 255, 255, 0.1);
 }
 
 .offer-banner h3 {
@@ -285,21 +302,44 @@
 }
 
 .offer-banner .btn {
-  background: var(--color-white);
-  color: var(--main-color);
-  padding: 0.75rem 1.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  color: var(--font-color-1);
+  padding: 0.75rem 2rem;
   font-size: 1rem;
   border-radius: 5px;
+  transition: all 0.3s ease;
+  background: rgba(0, 0, 0, 0.3);
 }
 
 .offer-banner .btn:hover {
-  background: #f8f8f8;
+  background: rgba(0, 0, 0, 0.5);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
+}
+
+@media (width<600px) {
+  .offer-banner {
+    padding: 20px;
+  }
+
+  .offer-banner h3 {
+    font-size: 1.7rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .offer-banner p {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .offer-banner .btn {
+    font-size: 0.8rem;
+  }
 }
 
 /* about us =========================================================== */
 
 .about-section {
-  background: linear-gradient(135deg, var(--color-4) , var(--color-3));
+  background: linear-gradient(135deg, var(--color-4), var(--color-3));
   color: var(--main-color);
   text-align: center;
 }
@@ -324,7 +364,7 @@
 .features {
   display: flex;
   justify-content: center;
-  padding: 10px;
+  padding: 20px;
 }
 
 .feature-box {
@@ -332,11 +372,11 @@
   color: var(--color-gray);
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  padding: 10px;
+  padding: 15px;
   width: 100%;
-  min-width: 100px;
-  max-width: 300px;
-  height: 180px;
+  min-width: 200px;
+  max-width: 200px;
+  height: 200px;
   text-align: center;
   transition: transform 0.3s;
   display: flex;
@@ -346,19 +386,34 @@
 
 .feature-box:hover {
   transform: rotateZ(5deg) translateY(-5px);
+  border: 5px solid var(--main-color);
+}
+
+.feature-box:hover {
+  padding: 10px;
+}
+
+.feature-box:hover i,
+.feature-box:hover p,
+.feature-box:hover h3 {
+  scale: 1.1;
+  margin-bottom: 5px;
 }
 
 .feature-box i {
   font-size: 1.7rem;
   color: var(--main-color);
+  transition: 0.3s ease;
 }
 
 .feature-box h3 {
   font-size: 1rem;
+  transition: 0.3s ease;
 }
 
 .feature-box p {
   font-size: 12px;
+  transition: 0.3s ease;
 }
 
 @keyframes fadeIn {
@@ -372,7 +427,7 @@
   }
 }
 
-@media(width<600px){
+@media (width<600px) {
   .features {
     padding: 20px;
   }
