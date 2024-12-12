@@ -7,18 +7,27 @@
   padding: 0;
   box-sizing: border-box;
   text-decoration: none;
+  scroll-behavior: smooth;
 }
 
-:root{
-  --main-color : #e15215 ;
-  --font-color-1 : #fff;
-  --font-color-2 : #000;
-}
+:root {
+  --main-color: #e15215;
 
+  --color-1: #ef4d34;
+  --color-2: #352b2b;
+  --color-3: #ffefc7;
+  --color-4: #ffae34;
+
+  --color-white: #fff;
+  --color-gray: #333;
+
+  --font-color-1: #fff;
+  --font-color-2: #000;
+}
 
 body {
   position: relative;
-  color: #333;
+  color: var(--color-gray);
 }
 
 .container {
@@ -34,8 +43,8 @@ body {
 /* تنسيق Header */
 header {
   transform: translateY(0%);
-  background-color: #e15215;
-  color: white;
+  background-color: var(--main-color);
+  color: var(--font-color-1);
   font-size: 1.2em;
   font-weight: 700;
   position: sticky;
@@ -72,7 +81,7 @@ header .logo {
 
 /* الشعار */
 .logo a {
-  color: white;
+  color: var(--font-color-1);
   text-decoration: none;
   font-size: 1.8em;
   text-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
@@ -97,11 +106,31 @@ header .logo {
   color: #cfcfcf;
   font-size: 1rem;
   transition: color 0.3s ease, background-color 0.3s ease;
+  position: relative;
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 100%;
+  bottom: -9px;
+  height: 3px;
+  background: var(--font-color-1);
+  border-radius: 5px;
+  transform-origin: right;
+  transform: scaleX(0);
+  transition: transform 0.3s;
+}
+
+.nav-links a.active::after {
+  transform-origin: left;
+  transform: scaleX(1);
 }
 
 .nav-links a:hover,
 .nav-links a.active {
-  color: #fff;
+  color: var(--font-color-1);
   font-weight: bold;
 }
 
@@ -110,7 +139,7 @@ header .logo {
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
   display: flex;
   align-items: center;
-  background-color: #f0f0f5;
+  background-color: var(--font-color-1);
   border-radius: 30px;
   padding: 10px 0;
   min-width: 250px;
@@ -118,7 +147,7 @@ header .logo {
   margin: 0 auto;
   height: 35px;
   max-width: 550px;
-  
+
   transition: 0.4s ease-in-out;
 }
 
@@ -131,20 +160,20 @@ header .logo {
   border: none;
   background: none;
   outline: none;
-  font-size: .7em;
+  font-size: 0.7em;
   padding: 10px;
-  color: #333;
-  caret-color: #e15215;
+  color: var(--font-color-2);
+  caret-color: var(--main-color);
   height: 40px;
-  width:  calc(100% - 34px)
+  width: calc(100% - 34px);
 }
 
 .search-btn {
-  background-color: #e15215;
-  color: white;
+  background-color: var(--main-color);
+  color: var(--font-color-1);
   border: none;
-  width: 30px;
-  height: 30px;
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
   cursor: pointer;
   transition: 0.3s ease;
@@ -154,8 +183,7 @@ header .logo {
 }
 
 .search-btn:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  scale: 1.05;
 }
 
 .search-btn i {
@@ -163,14 +191,14 @@ header .logo {
 }
 
 .search-btn:hover i {
-  color: #fff;
+  color: var(--font-color-1);
 }
 /* تنسيق الفوتر */
 footer {
-  background-color: #333;  /* خلفية داكنة */
-  color: #fff;  /* نص أبيض */
-  padding: 20px 0;  /* مساحة داخلية */
-  text-align: center;  /* محاذاة النص في المنتصف */
+  background-color: var(--color-gray); /* خلفية داكنة */
+  color: var(--font-color-1); /* نص أبيض */
+  padding: 20px 0; /* مساحة داخلية */
+  text-align: center; /* محاذاة النص في المنتصف */
   font-size: 1rem;
 }
 
@@ -188,18 +216,18 @@ footer p {
   position: relative;
   width: 100%;
   background: gray;
-  color: #fff;
+  color: var(--font-color-1);
   padding: 1rem;
   text-align: center;
 }
 
 .back-to-top a {
-  color: #fff;
+  color: var(--font-color-1);
   padding: 1rem;
 }
 
-@media(width<600px){
+@media (width<600px) {
   .nav-links a {
-    font-size: .8rem;
+    font-size: 0.8rem;
   }
 }

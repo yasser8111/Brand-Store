@@ -1,7 +1,7 @@
 /* hero ================================================================= */
 
 .hero {
-  background-image: url("../img/hero.jpg") ; /* استبدل your-image-url.jpg برابط الصورة */
+  background-image: url("../img/hero.jpg"); /* استبدل your-image-url.jpg برابط الصورة */
   background-size: cover; /* لجعل الصورة تغطي الخلفية بالكامل */
   background-position: center; /* لتوسيط الصورة */
   background-repeat: no-repeat; /* لمنع تكرار الصورة */
@@ -12,12 +12,13 @@
   align-items: center;
   justify-content: center;
   text-align: center;
-  color: white;
+  color: var(--font-color-1);
 }
 
 .hero-content {
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(10px);
+  border: 5px solid rgba(255, 255, 255, 0.1);
   padding: 30px;
   border-radius: 20px;
 }
@@ -40,7 +41,7 @@
 
 .hero-content .btn {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-  color: #fff;
+  color: var(--font-color-1);
   padding: 0.75rem 2rem;
   font-size: 1rem;
   border-radius: 5px;
@@ -58,7 +59,7 @@
 
   .hero-content h1 {
     font-size: 1.3rem;
-    margin-bottom: .5rem;
+    margin-bottom: 0.5rem;
   }
 
   .hero-content p {
@@ -67,7 +68,7 @@
   }
 
   .hero-content .btn {
-    font-size: .8rem;
+    font-size: 0.8rem;
   }
 }
 
@@ -75,7 +76,7 @@
 
 .categories {
   animation: fadeIn 0.8s ease-in-out;
-  background: #fff;
+  background: var(--font-color-1);
   overflow: hidden;
 }
 
@@ -83,7 +84,7 @@
   text-align: center;
   margin-bottom: 1.5rem;
   font-size: 1.8rem;
-  color: #e15215;
+  color: var(--main-color);
 }
 
 .swiper-categoty {
@@ -97,7 +98,7 @@
   background: linear-gradient(
     to bottom right,
     gray 0%,
-    #fff 50%,
+    var(--color-white) 50%,
     rgba(255, 255, 255, 0.5) 100%
   );
   backdrop-filter: blur(10px);
@@ -120,7 +121,7 @@
 
 .category-card h3 {
   font-size: 1rem;
-  color: #333;
+  color: var(--color-gray);
 }
 
 /* products ================================================================ */
@@ -136,7 +137,7 @@
   text-align: center;
   margin-bottom: 2rem;
   font-size: 1.8rem;
-  color: #e15215;
+  color: var(--main-color);
 }
 
 /* الشبكة لتنسيق المنتجات */
@@ -160,7 +161,7 @@
 
 /* تأثير التحويم */
 .product-card:hover {
-  background: #fff;
+  background: var(--font-color-1);
   transform: translateY(-10px);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
@@ -176,7 +177,7 @@
 .product-card h3 {
   width: 100%;
   font-size: 1rem;
-  color: #333;
+  color: var(--color-gray);
   display: -webkit-box;
   -webkit-line-clamp: 1; /* الحد الأقصى لعدد الأسطر */
   -webkit-box-orient: vertical;
@@ -205,7 +206,7 @@
 }
 
 .product-card p {
-  color: #000000;
+  color: var(--font-color-2);
   font-size: 1.3rem;
   font-weight: bold;
   border-radius: 5px;
@@ -227,7 +228,7 @@
 .more .btn {
   margin-right: 20px;
   align-items: center;
-  background: #fff;
+  background: var(--color-white);
   border-radius: 5px;
   border: 0;
   padding: 5px 15px;
@@ -255,7 +256,7 @@
     margin-right: 0;
   }
   .product-card {
-    background: #fff;
+    background: var(--color-white);
   }
   .product-card h3 {
     width: 100%;
@@ -271,11 +272,11 @@
 /* offers ================================================================== */
 
 .offers {
-  background: linear-gradient(135deg, #ef4d34, #ffae34);
+  background: linear-gradient(135deg, var(--main-color) , var(--color-3));
   position: relative;
   padding: 2rem 0;
   text-align: center;
-  color: white;
+  color: var(--font-color-1);
 }
 
 .offer-banner h3 {
@@ -284,8 +285,8 @@
 }
 
 .offer-banner .btn {
-  background: #fff;
-  color: #ef4d34;
+  background: var(--color-white);
+  color: var(--main-color);
   padding: 0.75rem 1.5rem;
   font-size: 1rem;
   border-radius: 5px;
@@ -298,8 +299,8 @@
 /* about us =========================================================== */
 
 .about-section {
-  background: linear-gradient(135deg, #ffefc7, #ffae34);
-  color: #e15215;
+  background: linear-gradient(135deg, var(--color-4) , var(--color-3));
+  color: var(--main-color);
   text-align: center;
 }
 
@@ -307,12 +308,11 @@
   font-size: 2.5rem;
 }
 
-.about-section p {
+.about-section .text {
   padding: 1.5rem;
   font-size: 1.2rem;
   line-height: 1.6;
   max-width: 800px;
-  margin: 0 auto 30px;
 }
 
 .swiper-about {
@@ -324,22 +324,24 @@
 .features {
   display: flex;
   justify-content: center;
-  gap: 10px;
-  padding: 20px;
+  padding: 10px;
 }
 
 .feature-box {
-  background: white;
-  color: #333;
+  background: var(--color-white);
+  color: var(--color-gray);
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   padding: 10px;
   width: 100%;
   min-width: 100px;
   max-width: 300px;
-  height: 200px;
+  height: 180px;
   text-align: center;
   transition: transform 0.3s;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .feature-box:hover {
@@ -348,13 +350,11 @@
 
 .feature-box i {
   font-size: 1.7rem;
-  margin-bottom: 15px;
-  color: #e15215;
+  color: var(--main-color);
 }
 
 .feature-box h3 {
   font-size: 1rem;
-  margin-bottom: 10px;
 }
 
 .feature-box p {
@@ -369,5 +369,11 @@
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@media(width<600px){
+  .features {
+    padding: 20px;
   }
 }

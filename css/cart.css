@@ -65,7 +65,7 @@ body {
 
 .cart-summary p {
   font-size: 1.2em;
-  color: #333;
+  color: var(--color-gray);
 }
 /* تنسيق حقل الكوبون */
 .coupon-section {
@@ -81,7 +81,7 @@ body {
 
 .coupon-section label {
   font-size: 1.2em;
-  color: #333;
+  color: var(--color-gray);
   font-weight: bold;
   flex: 1;
 }

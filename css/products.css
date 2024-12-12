@@ -51,7 +51,7 @@
 /* اسم المنتج */
 .product-card h3 {
   font-size: 1rem;
-  color: #333;
+  color: var(--color-gray);
 }
 
 /* الوصف */
@@ -219,7 +219,7 @@
   display: block;
   font-size: 16px;
   font-weight: bold;
-  color: #333;
+  color: var(--color-gray);
 }
 
 /* لون التحديد */
@@ -334,7 +334,7 @@
   
   border: 2px solid #ddd; /* حدود خفيفة لأزرار الصفحات */
   background-color: #ffffff; /* خلفية بيضاء ناعمة */
-  color: #333; /* نص داكن */
+  color: var(--color-gray); /* نص داكن */
   font-size: 18px;
   font-weight: 600;
   border-radius: 10px; /* الأزرار دائرية */
@@ -398,4 +398,13 @@
   background-color: #ff9800; /* لون الدائرة */
   border-radius: 50%; /* لتحويل المربع إلى دائرة */
   z-index: -1; /* خلف كل العناصر الأخرى */
+}
+
+
+@media(width>700px){
+  .background-circle2 {
+    position: absolute;
+    top: 0%;
+    left: -200px; /* لتجاوز الحدود اليمنى قليلاً */
+  }
 }

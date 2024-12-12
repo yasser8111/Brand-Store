@@ -35,7 +35,7 @@ navLinks.forEach(link => {
     // الانتظار قليلاً ثم الانتقال إلى الصفحة
     setTimeout(() => {
       window.location.href = link.href;
-    }, 50); // المدة تتوافق مع الـ transition في CSS
+    }, 100); // المدة تتوافق مع الـ transition في CSS
   });
 });
 
