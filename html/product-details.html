@@ -4,11 +4,19 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>تفاصيل المنتج - إلكترونيات بلو</title>
+
     <!-- Font Awesome -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
     />
+
+    <!-- swiper  -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
+
     <!-- CSS -->
     <link rel="stylesheet" href="../css/styles.css" />
     <link rel="stylesheet" href="../css/product-details.css" />
@@ -16,25 +24,27 @@
 
   <body>
     <header>
-      <div class="container"><div class="logo">
-        <a href="../index.html">إلكترونيات<span> بلو</span></a>
-      </div>
-      <div class="search-container">
-        <input
-          type="text"
-          class="search-input"
-          placeholder="ابحث عن منتج..."
-        />
-        <button class="search-btn">
-          <i class="fas fa-search"></i>
-        </button>
-      </div>
+      <div class="container">
+        <div class="search-container">
+          <input
+            type="text"
+            class="search-input"
+            placeholder="ابحث عن منتج..."
+          />
+          <button class="search-btn">
+            <i class="fas fa-search"></i>
+          </button>
+        </div>
         <nav>
           <ul class="nav-links">
             <li><a href="../index.html">الرئيسية</a></li>
             <li><a href="./products.html">المنتجات</a></li>
             <li><a href="./offers.html">العروض</a></li>
-            <li><a href="./cart.html">السله</a></li>
+            <li>
+              <a href="./cart.html"
+                ><i class="fa-solid fa-cart-shopping"></i
+              ></a>
+            </li>
             <li>
               <a href="./login.html"><i class="fas fa-user"></i></a>
             </li>
@@ -43,34 +53,47 @@
       </div>
     </header>
 
-    <h3>swipers + معرض الصور</h3>
-
     <main>
-      <!-- قسم تفاصيل المنتج -->
-      <section class="product-details">
-        <div class="container">
-          <h2>تفاصيل المنتج</h2>
-          <div class="product-content">
-            <img
-              src="../img/product1.jpg"
-              alt="اسم المنتج"
-              class="product-image"
-            />
-            <div class="product-info">
-              <h1>اسم المنتج</h1>
-              <p class="product-description">
-                هذا النص مثال لتفاصيل المنتج، مثل المزايا والفوائد التي يقدمها
-                للمستخدم.
-              </p>
-              <div class="product-price">
-                <span class="new-price">$199.99</span>
-                <span class="old-price">$249.99</span>
-              </div>
-              <button class="add-to-cart-btn">أضف إلى السلة</button>
+
+      <section class="product-section">
+        <div class="imges">
+          <div class="swiper-container main-swiper">
+            <div class="swiper-wrapper">
+              <!-- سيتم إضافة الصور الكبيرة هنا ديناميكيًا -->
+            </div>
+          </div>
+          <div class="swiper-container thumbnail-swiper">
+            <div class="swiper-wrapper">
+              <!-- سيتم إضافة الصور المصغّرة هنا ديناميكيًا -->
             </div>
           </div>
         </div>
+        <div class="product-details">
+          <h1 class="product-title"></h1>
+          <p class="product-description"></p>
+          <ul class="product-specs">
+            <!-- سيتم إضافة المواصفات هنا -->
+          </ul>
+          <div class="colors">
+            <!-- سيتم إضافة الألوان هنا -->
+          </div>
+          <div class="price">
+            <p></p>
+            <p class="old-price"></p>
+          </div>
+          <button class="cta-button">أضف إلى السلة</button>
+        </div>
       </section>
+
+      <section class="products">
+        <h2 class="section-title">المنتجات الأكثر مبيعًا</h2>
+        <div class="products-grid">
+          <!-- سيتم إضافة المنتجات ديناميكيًا هنا -->
+        </div>
+        <div class="more">
+          <button class="btn" id="loadMoreBtn">...المزيد</button>
+        </div>
+      </section>  
     </main>
 
     <footer>
@@ -79,6 +102,12 @@
       </div>
     </footer>
 
+    <!-- swiper  -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+    <!-- js  -->
+    <script src="../js/swiper.js"></script>
+    <script src="../js/product-details.js"></script>
     <script src="../js/main.js"></script>
   </body>
 </html>

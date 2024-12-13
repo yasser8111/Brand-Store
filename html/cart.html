@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>سلة المشتريات - إلكترونيات بلو</title>
-    <link rel="icon" type="image/x-icon" href="../img/icon/cart.png">
+    <link rel="icon" type="image/x-icon" href="../img/icon/cart.png" />
 
     <!-- Font Awesome -->
     <link
@@ -26,7 +26,7 @@
             class="search-input"
             placeholder="ابحث عن منتج..."
           />
-          <button class="search-btn" >
+          <button class="search-btn">
             <i class="fas fa-search"></i>
           </button>
         </div>
@@ -35,8 +35,11 @@
             <li><a href="../index.html">الرئيسية</a></li>
             <li><a href="./products.html">المنتجات</a></li>
             <li><a href="./offers.html">العروض</a></li>
-            <li><a href="./cart.html" class="active"><i class="fa-solid fa-cart-shopping"></i
-              ></a></li>
+            <li>
+              <a href="./cart.html" class="active"
+                ><i class="fa-solid fa-cart-shopping"></i
+              ></a>
+            </li>
             <li>
               <a href="./login.html"><i class="fas fa-user"></i></a>
             </li>
@@ -45,87 +48,43 @@
       </div>
     </header>
 
-    <h3>الموقع</h3>
-
-    <!-- محتوى السلة -->
-    <main>
-      <section class="cart-section">
-        <table class="cart-table">
-          <thead>
-            <tr>
-              <th>المنتج</th>
-              <th>الكمية</th>
-              <th>السعر</th>
-              <th>الإجمالي</th>
-              <th>إزالة</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>
-                <div class="product-info">
-                  <img src="../img/laptop.jpg" alt="اسم المنتج" />
-                  <span>اسم المنتج</span>
-                </div>
-              </td>
-              <td><input type="number" value="1" min="1" /></td>
-              <td>$199.99</td>
-              <td>$199.99</td>
-              <td>
-                <button class="remove-btn">
-                  <i class="fas fa-trash-alt"></i>
-                </button>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <div class="product-info">
-                  <img src="../img/headphones.webp" alt="اسم المنتج" />
-                  <span>اسم المنتج</span>
-                </div>
-              </td>
-              <td><input type="number" value="2" min="1" /></td>
-              <td>$99.99</td>
-              <td>$199.98</td>
-              <td>
-                <button class="remove-btn">
-                  <i class="fas fa-trash-alt"></i>
-                </button>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-        <div class="container">
-          <!-- قسم الكوبون -->
-          <div class="coupon-section">
-            <label for="coupon-input"></label>
-            <div class="coupon-input-container">
-              <input
-                type="text"
-                id="coupon-input"
-                class="coupon-input"
-                placeholder="أدخل الكود هنا"
-              />
-              <span id="coupon-status" class="coupon-status"></span>
+    <main class="cart-container">
+      <!-- المنتجات -->
+      <section class="cart-items">
+        <h2>المنتجات في السلة</h2>
+        <div class="cart-item">
+          <img src="../img/camera.jpg" alt="منتج" class="product-image" />
+          <div class="item-details">
+            <h3 class="product-name">اسم المنتج</h3>
+            <p class="description">وصف مختصر للمنتج</p>
+            <p class="price">السعر: <span>100$</span></p>
+            <div class="quantity-control">
+              <button class="btn-quantity decrease">-</button>
+              <span class="quantity">1</span>
+              <button class="btn-quantity increase">+</button>
             </div>
-            <button class="apply-coupon-btn" id="apply-coupon-btn">
-              تطبيق
-            </button>
-          </div>
-
-          <!-- ملخص السلة -->
-          <div class="cart-summary">
-            <h3>إجمالي السلة</h3>
-            <p><strong>الإجمالي الفرعي:</strong> $399.97</p>
-            <p><strong>الضريبة:</strong> $19.99</p>
-            <p><strong>الخصم:</strong> <span id="discount">$0.00</span></p>
-            <p>
-              <strong>الإجمالي النهائي:</strong>
-              <span id="final-total">$419.96</span>
-            </p>
-            <button class="btn-primary">إتمام الشراء</button>
+            <button class="remove-btn">🗑️ إزالة</button>
           </div>
         </div>
+      </section>
+
+      <!-- ملخص الطلب -->
+      <section class="cart-summary">
+        <h2>ملخص الطلب</h2>
+        <div class="summary-item">
+          <p>الإجمالي الفرعي:</p>
+          <p><span>100$</span></p>
+        </div>
+        <div class="summary-item">
+          <p>الضريبة:</p>
+          <p><span>5$</span></p>
+        </div>
+        <div class="summary-item total">
+          <p>الإجمالي الكلي:</p>
+          <p><span>105$</span></p>
+        </div>
+        <button class="checkout-btn">إتمام الطلب</button>
+        <button class="continue-shopping-btn">متابعة التسوق</button>
       </section>
     </main>
 

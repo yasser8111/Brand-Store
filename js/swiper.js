@@ -48,3 +48,25 @@ const swiperAbout = new Swiper(".swiper-about", {
     },
   },
 });
+
+
+document.addEventListener('DOMContentLoaded', () => {
+  // تهيئة الشريط الرئيسي (الصور الكبيرة)
+  const mainSwiper = new Swiper('.main-swiper', {
+    effect: 'slide',
+    spaceBetween: 1,
+  });
+
+  // تهيئة شريط الصور المصغرة
+  const thumbnailSwiper = new Swiper('.thumbnail-swiper', {
+    spaceBetween: 10,
+    slidesPerView: 3, // عدد الصور المصغّرة المعروضة
+    centeredSlides: true,
+    slideToClickedSlide: true, // التبديل عند النقر على الصورة المصغرة
+  });
+
+  // ربط الشريطين معًا
+  mainSwiper.controller.control = thumbnailSwiper;
+  thumbnailSwiper.controller.control = mainSwiper;
+});
+

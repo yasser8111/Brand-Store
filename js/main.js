@@ -1,4 +1,4 @@
-// Show and hide the header ===========================================
+// Show and hide the header ============================================================================================================
 
 let lastScrollY = window.scrollY;
 
@@ -16,7 +16,7 @@ window.addEventListener("scroll", () => {
   lastScrollY = window.scrollY; // تحديث موقع التمرير الحالي
 });
 
-// Page switching animation =========================================================
+// Page switching animation ============================================================================================================
 
 const navLinks = document.querySelectorAll(".nav-links a"); // تحديد الروابط مرة واحدة فقط
 
@@ -39,7 +39,8 @@ navLinks.forEach(link => {
   });
 });
 
-// Search functionality =======================================
+// Search functionality ============================================================================================================
+
 const searchInput = document.querySelector(".search-input");
 const searchContainer = document.querySelector(".search-container");
 

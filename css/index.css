@@ -212,6 +212,7 @@
   font-size: 1.3rem;
   font-weight: bold;
   border-radius: 5px;
+  color: #46bc1a;
 }
 
 .product-card .old-price {
@@ -274,68 +275,72 @@
 /* offers ================================================================== */
 
 .offers {
-  background-image: url("../img/offers.jpg"); /* استبدل your-image-url.jpg برابط الصورة */
+  background-image: url("../img/hero.jpg"); /* استبدل your-image-url.jpg برابط الصورة */
   background-size: cover; /* لجعل الصورة تغطي الخلفية بالكامل */
   background-position: center; /* لتوسيط الصورة */
   background-repeat: no-repeat; /* لمنع تكرار الصورة */
   background-attachment: fixed;
   position: relative;
-  height: 300px;
+  height: 50vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-align: center;
   color: var(--font-color-1);
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
-.offer-banner {
+.offer-content {
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(10px);
-  padding: 30px;
-  border-radius: 10px;
   border: 5px solid rgba(255, 255, 255, 0.1);
+  padding: 30px 60px;
+  border-radius: 20px;
 }
 
-.offer-banner h3 {
+.offer-content h1 {
   font-size: 2rem;
   margin-bottom: 1rem;
 }
 
-.offer-banner .btn {
+.offer-content p {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+.offer-content .btn {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
   color: var(--font-color-1);
   padding: 0.75rem 2rem;
   font-size: 1rem;
   border-radius: 5px;
+  background: rgba(0, 0, 0, 0.2);
   transition: all 0.3s ease;
-  background: rgba(0, 0, 0, 0.3);
 }
 
-.offer-banner .btn:hover {
+.offer-content .btn:hover {
   background: rgba(0, 0, 0, 0.5);
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
 }
 
 @media (width<600px) {
-  .offer-banner {
-    padding: 20px;
+  .offer-content {
+    padding: 20px 50px;
   }
 
-  .offer-banner h3 {
-    font-size: 1.7rem;
+  .offer-content h1 {
+    font-size: 1.5rem;
     margin-bottom: 0.5rem;
   }
 
-  .offer-banner p {
+  .offer-content p {
     font-size: 1rem;
     margin-bottom: 1rem;
   }
 
-  .offer-banner .btn {
+  .offer-content .btn {
     font-size: 0.8rem;
   }
 }
-
 /* about us =========================================================== */
 
 .about-section {

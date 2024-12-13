@@ -50,23 +50,49 @@
 
 /* اسم المنتج */
 .product-card h3 {
+  width: 100%;
   font-size: 1rem;
   color: var(--color-gray);
+  display: -webkit-box;
+  -webkit-line-clamp: 1; /* الحد الأقصى لعدد الأسطر */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis; /* إضافة النقاط عند تجاوز النص */
 }
 
 /* الوصف */
 .product-card .description {
+  text-align: end;
   font-size: 0.9rem;
   color: #555;
+  margin-bottom: 1rem; /* تباعد بين الوصف والسعر */
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* الحد الأقصى لعدد الأسطر */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis; /* إضافة النقاط عند تجاوز النص */
+  padding: 0 10px; /* إضافة تباعد داخلي */
 }
 
 /* السعر */
+
 .product-card .price {
-  color: #000;
-  font-size: 0.9rem;
-  font-weight: bold;
+  display: flex;
 }
 
+.product-card p {
+  color: var(--font-color-2);
+  font-size: 1.3rem;
+  font-weight: bold;
+  border-radius: 5px;
+  color: #46bc1a;
+}
+
+.product-card .old-price {
+  font-size: 0.8rem;
+  color: gray;
+  text-decoration: line-through red;
+}
 .products .more {
   display: flex;
   justify-content: end;
@@ -379,17 +405,27 @@
 }
 
 
-.background-circle1 {
+.circles{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: -1;
+}
+
+.circles .background-circle1 {
   position: absolute;
   bottom: 0; /* لتجاوز الحدود السفلية قليلاً */
-  right: -100px; /* لتجاوز الحدود اليمنى قليلاً */
+  right  : -30%; /* لتجاوز الحدود اليمنى قليلاً */
   width: 300px; /* حجم الدائرة */
   height: 300px; /* حجم الدائرة */
   background-color: #ff9800; /* لون الدائرة */
   border-radius: 50%; /* لتحويل المربع إلى دائرة */
   z-index: -1; /* خلف كل العناصر الأخرى */
 }
-.background-circle2 {
+.circles .background-circle2 {
   position: absolute;
   top: 30%; /* لتجاوز الحدود السفلية قليلاً */
   left: -200px; /* لتجاوز الحدود اليمنى قليلاً */

@@ -169,7 +169,7 @@ header .logo {
 }
 
 .search-btn {
-  background-color: var(--main-color);
+  background-color: var(--color-4);
   color: var(--font-color-1);
   border: none;
   width: 50px;
