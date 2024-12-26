@@ -7,17 +7,21 @@ const swiperCategoty = new Swiper(".swiper-categoty", {
   autoplay: {
     delay: 3000,
   },
-  slidesPerView: 2,
+  slidesPerView: 3,
   spaceBetween: 20,
   breakpoints: {
+    1264: {
+      slidesPerView: 7, // عرض 3 منتجات
+    },
     1024: {
-      slidesPerView: 5, // عرض 3 منتجات
+      slidesPerView: 6, // عرض 3 منتجات
     },
     768: {
-      slidesPerView: 4, // عرض منتجين
+      slidesPerView: 5, // عرض منتجين
     },
-    576: {
-      slidesPerView: 3, // عرض منتج واحد فقط
+    624: {
+      spaceBetween: 15,
+      slidesPerView: 4, // عرض منتج واحد فقط
     },
   },
 });

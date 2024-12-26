@@ -64,12 +64,15 @@ document.addEventListener("DOMContentLoaded", () => {
     .then((products) => {
       const productsGrid = document.querySelector(".products-grid");
 
+      // تصفية المنتجات الأكثر مبيعًا فقط
+      const bestSellerProducts = products.filter(product => product.best_seller);
+
       // دالة لعرض مجموعة من المنتجات
       const displayProducts = (startIndex, endIndex) => {
         for (let i = startIndex; i < endIndex; i++) {
-          if (i >= products.length) break; // إذا وصلنا إلى نهاية المنتجات
+          if (i >= bestSellerProducts.length) break; // إذا وصلنا إلى نهاية المنتجات
 
-          const product = products[i];
+          const product = bestSellerProducts[i];
           const productCard = document.createElement("div");
           productCard.classList.add("product-card");
           productCard.setAttribute("data-index", i);
@@ -106,7 +109,7 @@ document.addEventListener("DOMContentLoaded", () => {
         displayProducts(currentIndex, currentIndex + productsPerPage); // عرض مجموعة جديدة
 
         // إخفاء الزر إذا لم يتبق المزيد من المنتجات
-        if (currentIndex >= products.length) {
+        if (currentIndex >= bestSellerProducts.length) {
           loadMoreBtn.style.display = "none";
         }
       });

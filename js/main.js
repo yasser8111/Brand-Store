@@ -1,68 +1,96 @@
-// Show and hide the header ============================================================================================================
+// التحكم في القائمة الجانبية ============================================================================================================
 
-let lastScrollY = window.scrollY;
+document.addEventListener("DOMContentLoaded", function () {
+  const toggleMenuButton = document.getElementById("toggle-menu-btn");
+  const sideMenu = document.getElementById("side-menu");
 
-window.addEventListener("scroll", () => {
-  const header = document.querySelector("header");
-
-  if (window.scrollY > lastScrollY) {
-    // التمرير لأسفل - إخفاء الهيدر
-    header.classList.add("hidden");
-  } else {
-    // التمرير لأعلى - إظهار الهيدر
-    header.classList.remove("hidden");
-  }
-
-  lastScrollY = window.scrollY; // تحديث موقع التمرير الحالي
-});
-
-// Page switching animation ============================================================================================================
-
-const navLinks = document.querySelectorAll(".nav-links a"); // تحديد الروابط مرة واحدة فقط
-
-navLinks.forEach(link => {
-  link.addEventListener("click", (event) => {
-    event.preventDefault(); // منع الانتقال الفوري
-
-    // إزالة الحالة النشطة من جميع الروابط
-    navLinks.forEach(nav => {
-      nav.classList.remove("active");
-    });
-
-    // إضافة الحالة النشطة للرابط المحدد
-    link.classList.add("active");
-
-    // الانتظار قليلاً ثم الانتقال إلى الصفحة
-    setTimeout(() => {
-      window.location.href = link.href;
-    }, 160); // المدة تتوافق مع الـ transition في CSS
+  toggleMenuButton.addEventListener("click", function () {
+    sideMenu.classList.toggle("menu-visible");
   });
 });
 
-// Search functionality ============================================================================================================
+// تنقل الصفحات مع تأثير الانتقال ============================================================================================================
 
-const searchInput = document.querySelector(".search-input");
-const searchContainer = document.querySelector(".search-container");
+const navigationLinks = document.querySelectorAll(".main-nav a");
 
-searchInput.addEventListener("focus", () => {
-  searchContainer.classList.add("focused"); // إضافة الكلاس عند التركيز
+navigationLinks.forEach((navLink) => {
+  navLink.addEventListener("click", (event) => {
+    event.preventDefault();
+
+    navigationLinks.forEach((link) => link.classList.remove("active-link"));
+
+    navLink.classList.add("active-link");
+
+    setTimeout(() => {
+      window.location.href = navLink.href;
+    }, 160);
+  });
 });
 
-searchInput.addEventListener("blur", () => {
-  searchContainer.classList.remove("focused"); // إزالة الكلاس عند الخروج
+// ==================
+
+document.addEventListener("DOMContentLoaded", function () {
+  // الحصول على جميع الروابط داخل القائمة الجانبية
+  const navigationLinks = document.querySelectorAll("#side-menu a");
+
+  // الحصول على مسار الصفحة الحالية
+  const currentPagePath = window.location.pathname;
+
+  // التحقق من كل رابط وإضافة أو إزالة صنف "active-link" بناءً على الصفحة الحالية
+  navigationLinks.forEach((navLink) => {
+    // إذا كان href الخاص بالرابط يتضمن مسار الصفحة الحالية
+    if (navLink.href.includes(currentPagePath)) {
+      navLink.classList.add("active-link"); // إضافة الصنف "active-link" للرابط النشط
+    } else {
+      navLink.classList.remove("active-link"); // إزالة الصنف "active-link" من الروابط الأخرى
+    }
+
+    // إضافة حدث "click" للرابط
+    navLink.addEventListener("click", (event) => {
+      event.preventDefault(); // منع التنقل الفوري
+
+      // إزالة الكلاس "active-link" من جميع الروابط
+      navigationLinks.forEach((link) => link.classList.remove("active-link"));
+
+      // إضافة الكلاس "active-link" للرابط الحالي
+      navLink.classList.add("active-link");
+
+      // انتظار التأثير أو الانتقال قبل التنقل إلى الصفحة المطلوبة
+      setTimeout(() => {
+        window.location.href = navLink.href; // التنقل إلى الرابط
+      }, 160); // يمكن ضبط التأخير هنا
+    });
+  });
 });
 
-window.addEventListener("load", () => {
-  const header = document.querySelector("header"); // تعريف الهيدر هنا
-  header.classList.add("near-top"); // إظهار الهيدر عند تحميل الصفحة
-});
+// تعيين الرابط النشط عند تحميل الصفحة بناءً على الموقع الحالي ============================================================================================================
 
-// تعيين الزر النشط عند تحميل الصفحة بناءً على الموقع الحالي
-const currentPath = window.location.pathname; // الحصول على مسار الصفحة الحالية
-navLinks.forEach(link => {
-  if (link.href.includes(currentPath)) {
-    link.classList.add("active"); // إضافة الفئة النشطة للرابط المطابق
+const currentPagePath = window.location.pathname;
+
+navigationLinks.forEach((navLink) => {
+  if (navLink.href.includes(currentPagePath)) {
+    navLink.classList.add("active-link");
   } else {
-    link.classList.remove("active"); // إزالة الفئة النشطة من الروابط الأخرى
+    navLink.classList.remove("active-link");
   }
+});
+
+// =================
+
+document.addEventListener("DOMContentLoaded", function () {
+  // الحصول على جميع الروابط داخل القائمة الجانبية
+  const navigationLinks = document.querySelectorAll("#side-menu a");
+
+  // الحصول على مسار الصفحة الحالية
+  const currentPagePath = window.location.pathname;
+
+  // التحقق من كل رابط وإضافة أو إزالة صنف "active-link"
+  navigationLinks.forEach((navLink) => {
+    // إذا كان href الخاص بالرابط يتضمن مسار الصفحة الحالية
+    if (navLink.href.includes(currentPagePath)) {
+      navLink.classList.add("active-link"); // إضافة الصنف "active-link"
+    } else {
+      navLink.classList.remove("active-link"); // إزالة الصنف "active-link" من الروابط الأخرى
+    }
+  });
 });

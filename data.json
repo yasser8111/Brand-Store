@@ -3,6 +3,9 @@
     "id": 1,
     "name": "لابتوب Dell XPS 13",
     "description": "يتميز لابتوب Dell XPS 13 بأداء عالي وتصميم أنيق...",
+    "type": "لابتوب",
+    "best_seller": true,
+    "in_stock": true,
     "specifications": [
       { "name": "الشاشة", "value": "13.4 بوصة، دقة 4K" },
       { "name": "المعالج", "value": "Intel Core i7 11th Gen" },
@@ -24,6 +27,9 @@
     "id": 2,
     "name": "كاميرا Canon EOS 5D",
     "description": "كاميرا احترافية بجودة تصوير فائقة...",
+    "type": "كاميرا",
+    "best_seller": false,
+    "in_stock": true,
     "specifications": [
       { "name": "الدقة", "value": "30.4 ميجابكسل" },
       { "name": "التصوير", "value": "فيديو بدقة 4K" },
@@ -43,6 +49,9 @@
     "id": 3,
     "name": "سماعات Bose QuietComfort 45",
     "description": "سماعات Bose تمنحك جودة صوت مذهلة مع ميزة إلغاء الضوضاء...",
+    "type": "سماعات",
+    "best_seller": true,
+    "in_stock": false,
     "specifications": [
       { "name": "الوزن", "value": "0.5 كجم" },
       { "name": "الاتصال", "value": "بلوتوث 5.1" },
@@ -59,89 +68,12 @@
     ]
   },
   {
-    "id": 4,
-    "name": "هاتف Samsung Galaxy S21",
-    "description": "هاتف ذكي بمواصفات قوية وتصميم رائع...",
-    "specifications": [
-      { "name": "الشاشة", "value": "6.2 بوصة، دقة FHD+" },
-      { "name": "المعالج", "value": "Exynos 2100" },
-      { "name": "الذاكرة", "value": "8 جيجابايت RAM" },
-      { "name": "التخزين", "value": "128 جيجابايت" },
-      { "name": "الكاميرا", "value": "ثلاثية بدقة 64 ميجابكسل" },
-      { "name": "البطارية", "value": "4000 مللي أمبير" }
-    ],
-    "colors": ["black", "silver", "purple"],
-    "price": 799,
-    "old_price": 999,
-    "images": [
-      "../img/phone.jpg",
-      "../img/phone.jpg",
-      "../img/phone.jpg"
-    ]
-  },
-  {
-    "id": 5,
-    "name": "ساعة Apple Watch Series 8",
-    "description": "ساعة ذكية متطورة من أبل مع ميزات تتبع الصحة واللياقة...",
-    "specifications": [
-      { "name": "الشاشة", "value": "1.9 بوصة، Always-On Retina" },
-      { "name": "المعالج", "value": "S8 SiP" },
-      { "name": "الاتصال", "value": "Wi-Fi, Bluetooth 5.3" },
-      { "name": "المستشعرات", "value": "معدل نبضات القلب، قياس الأكسجين" }
-    ],
-    "colors": ["red", "black", "gold"],
-    "price": 399,
-    "old_price": 450,
-    "images": [
-      "../img/watch.jpg",
-      "../img/watch.jpg",
-      "../img/watch.jpg"
-    ]
-  },
-  {
-    "id": 6,
-    "name": "لابتوب Dell XPS 13",
-    "description": "يتميز لابتوب Dell XPS 13 بأداء عالي وتصميم أنيق...",
-    "specifications": [
-      { "name": "الشاشة", "value": "13.4 بوصة، دقة 4K" },
-      { "name": "المعالج", "value": "Intel Core i7 11th Gen" },
-      { "name": "الذاكرة", "value": "16 جيجابايت RAM" },
-      { "name": "التخزين", "value": "512 جيجابايت SSD" },
-      { "name": "الوزن", "value": "1.2 كجم" },
-      { "name": "البطارية", "value": "حتى 12 ساعة من الاستخدام" }
-    ],
-    "colors": ["red", "blue", "green"],
-    "price": 4999,
-    "old_price": 6000,
-    "images": [
-      "../img/laptop.jpg",
-      "../img/laptop.jpg",
-      "../img/laptop.jpg"
-    ]
-  },
-  {
-    "id": 7,
-    "name": "كاميرا Canon EOS 5D",
-    "description": "كاميرا احترافية بجودة تصوير فائقة...",
-    "specifications": [
-      { "name": "الدقة", "value": "30.4 ميجابكسل" },
-      { "name": "التصوير", "value": "فيديو بدقة 4K" },
-      { "name": "الوزن", "value": "0.8 كجم" },
-      { "name": "الشاشة", "value": "3.2 بوصة LCD" }
-    ],
-    "colors": ["black", "silver"],
-    "price": 2499,
-    "old_price": 2800,
-    "images": [
-      "../img/camera.jpg",
-      "../img/camera.jpg",
-      "../img/camera.jpg"
-    ]
-  },
-  {
-    "id": 8,
+    "id": 3,
     "name": "سماعات Bose QuietComfort 45",
     "description": "سماعات Bose تمنحك جودة صوت مذهلة مع ميزة إلغاء الضوضاء...",
+    "type": "سماعات",
+    "best_seller": true,
+    "in_stock": false,
     "specifications": [
       { "name": "الوزن", "value": "0.5 كجم" },
       { "name": "الاتصال", "value": "بلوتوث 5.1" },
@@ -158,43 +90,157 @@
     ]
   },
   {
-    "id": 9,
-    "name": "هاتف Samsung Galaxy S21",
-    "description": "هاتف ذكي بمواصفات قوية وتصميم رائع...",
+    "id": 3,
+    "name": "سماعات Bose QuietComfort 45",
+    "description": "سماعات Bose تمنحك جودة صوت مذهلة مع ميزة إلغاء الضوضاء...",
+    "type": "سماعات",
+    "best_seller": true,
+    "in_stock": false,
     "specifications": [
-      { "name": "الشاشة", "value": "6.2 بوصة، دقة FHD+" },
-      { "name": "المعالج", "value": "Exynos 2100" },
-      { "name": "الذاكرة", "value": "8 جيجابايت RAM" },
-      { "name": "التخزين", "value": "128 جيجابايت" },
-      { "name": "الكاميرا", "value": "ثلاثية بدقة 64 ميجابكسل" },
-      { "name": "البطارية", "value": "4000 مللي أمبير" }
+      { "name": "الوزن", "value": "0.5 كجم" },
+      { "name": "الاتصال", "value": "بلوتوث 5.1" },
+      { "name": "البطارية", "value": "حتى 24 ساعة" },
+      { "name": "الشحن", "value": "منفذ USB-C" }
     ],
-    "colors": ["black", "silver", "purple"],
-    "price": 799,
-    "old_price": 999,
+    "colors": ["black", "white"],
+    "price": 299,
+    "old_price": 350,
     "images": [
-      "../img/phone.jpg",
-      "../img/phone.jpg",
-      "../img/phone.jpg"
+      "../img/headphones.webp",
+      "../img/headphones.webp",
+      "../img/headphones.webp"
     ]
   },
   {
-    "id": 10,
-    "name": "ساعة Apple Watch Series 8",
-    "description": "ساعة ذكية متطورة من أبل مع ميزات تتبع الصحة واللياقة...",
+    "id": 3,
+    "name": "سماعات Bose QuietComfort 45",
+    "description": "سماعات Bose تمنحك جودة صوت مذهلة مع ميزة إلغاء الضوضاء...",
+    "type": "سماعات",
+    "best_seller": true,
+    "in_stock": false,
     "specifications": [
-      { "name": "الشاشة", "value": "1.9 بوصة، Always-On Retina" },
-      { "name": "المعالج", "value": "S8 SiP" },
-      { "name": "الاتصال", "value": "Wi-Fi, Bluetooth 5.3" },
-      { "name": "المستشعرات", "value": "معدل نبضات القلب، قياس الأكسجين" }
+      { "name": "الوزن", "value": "0.5 كجم" },
+      { "name": "الاتصال", "value": "بلوتوث 5.1" },
+      { "name": "البطارية", "value": "حتى 24 ساعة" },
+      { "name": "الشحن", "value": "منفذ USB-C" }
     ],
-    "colors": ["red", "black", "gold"],
-    "price": 399,
-    "old_price": 450,
+    "colors": ["black", "white"],
+    "price": 299,
+    "old_price": 350,
     "images": [
-      "../img/watch.jpg",
-      "../img/watch.jpg",
-      "../img/watch.jpg"
+      "../img/headphones.webp",
+      "../img/headphones.webp",
+      "../img/headphones.webp"
+    ]
+  },
+  {
+    "id": 3,
+    "name": "سماعات Bose QuietComfort 45",
+    "description": "سماعات Bose تمنحك جودة صوت مذهلة مع ميزة إلغاء الضوضاء...",
+    "type": "سماعات",
+    "best_seller": true,
+    "in_stock": false,
+    "specifications": [
+      { "name": "الوزن", "value": "0.5 كجم" },
+      { "name": "الاتصال", "value": "بلوتوث 5.1" },
+      { "name": "البطارية", "value": "حتى 24 ساعة" },
+      { "name": "الشحن", "value": "منفذ USB-C" }
+    ],
+    "colors": ["black", "white"],
+    "price": 299,
+    "old_price": 350,
+    "images": [
+      "../img/headphones.webp",
+      "../img/headphones.webp",
+      "../img/headphones.webp"
+    ]
+  },
+  {
+    "id": 3,
+    "name": "سماعات Bose QuietComfort 45",
+    "description": "سماعات Bose تمنحك جودة صوت مذهلة مع ميزة إلغاء الضوضاء...",
+    "type": "سماعات",
+    "best_seller": true,
+    "in_stock": false,
+    "specifications": [
+      { "name": "الوزن", "value": "0.5 كجم" },
+      { "name": "الاتصال", "value": "بلوتوث 5.1" },
+      { "name": "البطارية", "value": "حتى 24 ساعة" },
+      { "name": "الشحن", "value": "منفذ USB-C" }
+    ],
+    "colors": ["black", "white"],
+    "price": 299,
+    "old_price": 350,
+    "images": [
+      "../img/headphones.webp",
+      "../img/headphones.webp",
+      "../img/headphones.webp"
+    ]
+  },
+  {
+    "id": 3,
+    "name": "سماعات Bose QuietComfort 45",
+    "description": "سماعات Bose تمنحك جودة صوت مذهلة مع ميزة إلغاء الضوضاء...",
+    "type": "سماعات",
+    "best_seller": true,
+    "in_stock": false,
+    "specifications": [
+      { "name": "الوزن", "value": "0.5 كجم" },
+      { "name": "الاتصال", "value": "بلوتوث 5.1" },
+      { "name": "البطارية", "value": "حتى 24 ساعة" },
+      { "name": "الشحن", "value": "منفذ USB-C" }
+    ],
+    "colors": ["black", "white"],
+    "price": 299,
+    "old_price": 350,
+    "images": [
+      "../img/headphones.webp",
+      "../img/headphones.webp",
+      "../img/headphones.webp"
+    ]
+  },
+  {
+    "id": 3,
+    "name": "سماعات Bose QuietComfort 45",
+    "description": "سماعات Bose تمنحك جودة صوت مذهلة مع ميزة إلغاء الضوضاء...",
+    "type": "سماعات",
+    "best_seller": true,
+    "in_stock": false,
+    "specifications": [
+      { "name": "الوزن", "value": "0.5 كجم" },
+      { "name": "الاتصال", "value": "بلوتوث 5.1" },
+      { "name": "البطارية", "value": "حتى 24 ساعة" },
+      { "name": "الشحن", "value": "منفذ USB-C" }
+    ],
+    "colors": ["black", "white"],
+    "price": 299,
+    "old_price": 350,
+    "images": [
+      "../img/headphones.webp",
+      "../img/headphones.webp",
+      "../img/headphones.webp"
+    ]
+  },
+  {
+    "id": 3,
+    "name": "سماعات Bose QuietComfort 45",
+    "description": "سماعات Bose تمنحك جودة صوت مذهلة مع ميزة إلغاء الضوضاء...",
+    "type": "سماعات",
+    "best_seller": true,
+    "in_stock": false,
+    "specifications": [
+      { "name": "الوزن", "value": "0.5 كجم" },
+      { "name": "الاتصال", "value": "بلوتوث 5.1" },
+      { "name": "البطارية", "value": "حتى 24 ساعة" },
+      { "name": "الشحن", "value": "منفذ USB-C" }
+    ],
+    "colors": ["black", "white"],
+    "price": 299,
+    "old_price": 350,
+    "images": [
+      "../img/headphones.webp",
+      "../img/headphones.webp",
+      "../img/headphones.webp"
     ]
   }
 ]

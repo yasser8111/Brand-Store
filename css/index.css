@@ -12,15 +12,15 @@
   align-items: center;
   justify-content: center;
   text-align: center;
-  color: var(--font-color-1);
+  color: var(--text-color-light);
 }
 
 .hero-content {
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(10px);
-  border: 5px solid rgba(255, 255, 255, 0.1);
+  border: 2px solid rgba(255, 255, 255, 0.1);
   padding: 30px;
-  border-radius: 20px;
+  border-radius: 10px;
 }
 
 .hero-content h1,
@@ -55,6 +55,9 @@
 }
 
 @media (width<600px) {
+  .hero {
+    height: 50vh;
+  }
   .hero-content {
     padding: 20px;
   }
@@ -124,6 +127,42 @@
 .category-card h3 {
   font-size: 1rem;
   color: var(--color-gray);
+}
+
+@media (width<768px) {
+  .categories .section-title {
+    margin-bottom: .5rem;
+    font-size: 1.5rem;
+  }
+  
+  .swiper-categoty {
+    padding: 20px;
+  }
+  
+  .category-card {
+    padding: .7rem;
+    border-radius: 5px;
+    background: linear-gradient(
+      to bottom right,
+      gray 0%,
+      var(--color-white) 50%,
+      rgba(255, 255, 255, 0.5) 100%
+    );
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    min-width: 130px;
+  }
+  
+  .category-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+  }
+  
+  .category-card img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 0.2rem;
+  }
 }
 
 /* products ================================================================ */
@@ -286,15 +325,15 @@
   align-items: center;
   justify-content: center;
   text-align: center;
-  color: var(--font-color-1);
+  color: var(--text-color-light);
 }
 
 .offer-content {
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(10px);
-  border: 5px solid rgba(255, 255, 255, 0.1);
+  border: 2px solid rgba(255, 255, 255, 0.1);
   padding: 30px 60px;
-  border-radius: 20px;
+  border-radius: 15px;
 }
 
 .offer-content h1 {
@@ -323,22 +362,20 @@
 }
 
 @media (width<600px) {
+  .offers {
+    height: 40vh;
+  }
   .offer-content {
     padding: 20px 50px;
   }
 
   .offer-content h1 {
     font-size: 1.5rem;
-    margin-bottom: 0.5rem;
   }
 
+  .offer-content .btn,
   .offer-content p {
     font-size: 1rem;
-    margin-bottom: 1rem;
-  }
-
-  .offer-content .btn {
-    font-size: 0.8rem;
   }
 }
 /* about us =========================================================== */
