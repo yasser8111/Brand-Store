@@ -18,9 +18,8 @@
 .hero-content {
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(10px);
-  border: 2px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 5px solid rgba(255, 255, 255, 0.1);
   padding: 30px;
-  border-radius: 10px;
 }
 
 .hero-content h1,
@@ -40,18 +39,16 @@
 }
 
 .hero-content .btn {
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  border-bottom: 5px solid rgba(0, 0, 0, 0.15);
   color: var(--font-color-1);
   padding: 0.75rem 2rem;
   font-size: 1rem;
-  border-radius: 5px;
   background: rgba(0, 0, 0, 0.2);
   transition: all 0.3s ease;
 }
 
 .hero-content .btn:hover {
   background: rgba(0, 0, 0, 0.5);
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
 }
 
 @media (width<600px) {
@@ -99,29 +96,26 @@
 .category-card {
   text-align: center;
   padding: 1rem;
-  border-radius: 10px;
   background: linear-gradient(
     to bottom right,
     gray 0%,
     var(--color-white) 50%,
     rgba(255, 255, 255, 0.5) 100%
   );
-  backdrop-filter: blur(10px);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 5px 0px rgba(0, 0, 0, 0.15);
   transition: all 0.3s ease;
   min-width: 130px;
 }
 
 .category-card:hover {
   transform: translateY(-10px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  box-shadow: -5px 15px 0px rgba(0, 0, 0, 0.15);
 }
 
 .category-card img {
   width: 90%;
   height: auto;
   margin-bottom: 0.5rem;
-  border-radius: 5px;
 }
 
 .category-card h3 {
@@ -131,33 +125,19 @@
 
 @media (width<768px) {
   .categories .section-title {
-    margin-bottom: .5rem;
+    margin-bottom: 0.5rem;
     font-size: 1.5rem;
   }
-  
+
   .swiper-categoty {
     padding: 20px;
   }
-  
+
   .category-card {
-    padding: .7rem;
-    border-radius: 5px;
-    background: linear-gradient(
-      to bottom right,
-      gray 0%,
-      var(--color-white) 50%,
-      rgba(255, 255, 255, 0.5) 100%
-    );
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
+    padding: 0.7rem;
     min-width: 130px;
   }
-  
-  .category-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
-  }
-  
+
   .category-card img {
     width: 100%;
     height: auto;
@@ -189,28 +169,26 @@
   padding: 0 1rem;
 }
 .product-card {
+  border: 0px solid rgba(0, 0, 0, 0.15);
   text-align: center;
-  padding: 1rem;
-  border-radius: 10px;
+  padding: .5rem;
   background: #f9fafb;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  transition: 0.3s ease;
-  overflow: hidden;
+  box-shadow: -1px 5px 0px rgba(0, 0, 0, 0.15);
   position: relative; /* لضمان أن السعر يظل داخل البطاقة */
   min-height: 300px; /* جعل البطاقة مرنة مع حد أدنى للارتفاع */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* تأثير التحويم */
 .product-card:hover {
   background: var(--font-color-1);
   transform: translateY(-10px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  box-shadow: -5px 15px 0px rgba(0, 0, 0, 0.15);
 }
 
 .product-card img {
   max-width: 120px;
   max-height: 120px;
-  border-radius: 5px;
   object-fit: cover; /* ضمان ملاءمة الصورة داخل الحيز المحدد */
 }
 
@@ -331,9 +309,8 @@
 .offer-content {
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(10px);
-  border: 2px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 10px solid rgba(255, 255, 255, 0.1);
   padding: 30px 60px;
-  border-radius: 15px;
 }
 
 .offer-content h1 {
@@ -347,18 +324,16 @@
 }
 
 .offer-content .btn {
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 5px 0px rgba(0, 0, 0, 0.15);
   color: var(--font-color-1);
   padding: 0.75rem 2rem;
   font-size: 1rem;
-  border-radius: 5px;
   background: rgba(0, 0, 0, 0.2);
   transition: all 0.3s ease;
 }
 
 .offer-content .btn:hover {
   background: rgba(0, 0, 0, 0.5);
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
 }
 
 @media (width<600px) {
@@ -412,7 +387,6 @@
 .feature-box {
   background: var(--color-white);
   color: var(--color-gray);
-  border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   padding: 15px;
   width: 100%;
@@ -429,17 +403,6 @@
 .feature-box:hover {
   transform: rotateZ(5deg) translateY(-5px);
   border: 5px solid var(--main-color);
-}
-
-.feature-box:hover {
-  padding: 10px;
-}
-
-.feature-box:hover i,
-.feature-box:hover p,
-.feature-box:hover h3 {
-  scale: 1.1;
-  margin-bottom: 5px;
 }
 
 .feature-box i {

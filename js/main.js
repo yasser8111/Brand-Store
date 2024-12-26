@@ -6,6 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   toggleMenuButton.addEventListener("click", function () {
     sideMenu.classList.toggle("menu-visible");
+    toggleMenuButton.classList.toggle("on");
   });
 });
 
