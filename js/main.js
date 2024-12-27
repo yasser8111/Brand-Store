@@ -1,14 +1,11 @@
 // التحكم في القائمة الجانبية ============================================================================================================
 
-document.addEventListener("DOMContentLoaded", function () {
-  const toggleMenuButton = document.getElementById("toggle-menu-btn");
-  const sideMenu = document.getElementById("side-menu");
+const MenuButton = document.getElementById("menu-btn");
+const sideMenu = document.getElementById("side-menu");
 
-  toggleMenuButton.addEventListener("click", function () {
-    sideMenu.classList.toggle("menu-visible");
-    toggleMenuButton.classList.toggle("on");
-  });
-});
+function oac_menu() {
+  sideMenu.classList.toggle("visible");
+}
 
 // تنقل الصفحات مع تأثير الانتقال ============================================================================================================
 
@@ -18,9 +15,9 @@ navigationLinks.forEach((navLink) => {
   navLink.addEventListener("click", (event) => {
     event.preventDefault();
 
-    navigationLinks.forEach((link) => link.classList.remove("active-link"));
+    navigationLinks.forEach((link) => link.classList.remove("active"));
 
-    navLink.classList.add("active-link");
+    navLink.classList.add("active");
 
     setTimeout(() => {
       window.location.href = navLink.href;
@@ -41,25 +38,21 @@ document.addEventListener("DOMContentLoaded", function () {
   navigationLinks.forEach((navLink) => {
     // إذا كان href الخاص بالرابط يتضمن مسار الصفحة الحالية
     if (navLink.href.includes(currentPagePath)) {
-      navLink.classList.add("active-link"); // إضافة الصنف "active-link" للرابط النشط
+      navLink.classList.add("active"); // إضافة الصنف "active-link" للرابط النشط
     } else {
-      navLink.classList.remove("active-link"); // إزالة الصنف "active-link" من الروابط الأخرى
+      navLink.classList.remove("active"); // إزالة الصنف "active-link" من الروابط الأخرى
     }
 
-    // إضافة حدث "click" للرابط
     navLink.addEventListener("click", (event) => {
-      event.preventDefault(); // منع التنقل الفوري
+      event.preventDefault();
 
-      // إزالة الكلاس "active-link" من جميع الروابط
-      navigationLinks.forEach((link) => link.classList.remove("active-link"));
+      navigationLinks.forEach((link) => link.classList.remove("active"));
 
-      // إضافة الكلاس "active-link" للرابط الحالي
-      navLink.classList.add("active-link");
+      navLink.classList.add("active");
 
-      // انتظار التأثير أو الانتقال قبل التنقل إلى الصفحة المطلوبة
       setTimeout(() => {
-        window.location.href = navLink.href; // التنقل إلى الرابط
-      }, 160); // يمكن ضبط التأخير هنا
+        window.location.href = navLink.href;
+      }, 160);
     });
   });
 });
@@ -70,9 +63,9 @@ const currentPagePath = window.location.pathname;
 
 navigationLinks.forEach((navLink) => {
   if (navLink.href.includes(currentPagePath)) {
-    navLink.classList.add("active-link");
+    navLink.classList.add("active");
   } else {
-    navLink.classList.remove("active-link");
+    navLink.classList.remove("active");
   }
 });
 
@@ -89,9 +82,9 @@ document.addEventListener("DOMContentLoaded", function () {
   navigationLinks.forEach((navLink) => {
     // إذا كان href الخاص بالرابط يتضمن مسار الصفحة الحالية
     if (navLink.href.includes(currentPagePath)) {
-      navLink.classList.add("active-link"); // إضافة الصنف "active-link"
+      navLink.classList.add("active"); // إضافة الصنف "active-link"
     } else {
-      navLink.classList.remove("active-link"); // إزالة الصنف "active-link" من الروابط الأخرى
+      navLink.classList.remove("active"); // إزالة الصنف "active-link" من الروابط الأخرى
     }
   });
 });

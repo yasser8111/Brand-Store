@@ -116,3 +116,11 @@ document.addEventListener("DOMContentLoaded", () => {
     })
     .catch((error) => console.error("خطأ في جلب المنتجات:", error));
 });
+
+
+
+
+function toggleFlip(element) {
+  const inner = element.querySelector('.feature-box-inner');
+  inner.classList.toggle('clicked');
+}
