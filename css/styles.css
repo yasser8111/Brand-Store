@@ -11,9 +11,9 @@
 }
 
 :root {
-  --main-color: #e15215;
+  --main-color: #ff6600;
 
-  --shade-1: #ef4d34;
+  --shade-1: #e15215e8;
   --shade-2: #352b2b;
   --shade-3: #ffefc7;
   --shade-4: #ffae34;
@@ -26,277 +26,194 @@
 }
 
 body {
-  position: relative;
   color: var(--color-gray);
 }
 
-/* تنسيق Header */
+/* header =============================== */
+
 header {
-  background: var(--main-color);
-  color: var(--text-color-light);
-  font-weight: 700;
-  position: sticky;
-  top: 0;
-  width: 100%;
-  z-index: 1000;
-  box-shadow: 0 10px 0px rgba(0, 0, 0, 0.1);
-  transition: all 0.2s ease-in-out;
-  padding-top: 5px;
-}
-
-header.header-hidden {
-  backdrop-filter: blur(10px);
-  background: #e15215bd;
-}
-
-.header-con {
+  background-color: var(--main-color);
+  color: #fff;
+  padding: 1rem 2rem;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  transition: all 0.3s ease;
 }
 
-/* الروابط */
-.main-nav,
-.side-menu {
-  display: flex;
-  list-style: none;
+header.scrolled {
+  background-color: var(--shade-1);
 }
 
-.main-nav li,
-.side-menu li {
-  padding: 5px;
+header.scrolled .burger-menu ul {
+  background-color: var(--shade-1);
+}
+
+header a {
   display: flex;
+  justify-content: center;
+  align-items: center;
+  outline: none;
+}
+
+header a img {
+  width: 50px;
+  height: auto;
+}
+
+nav {
+  display: flex;
+  gap: 0.5rem;
   align-items: center;
 }
 
-.main-nav a,
-.side-menu a {
-  text-decoration: none;
-  padding: 0 10px;
-  color: #cfcfcf;
-  font-size: 1rem;
-  transition: color 0.3s ease, background-color 0.3s ease;
+nav a {
   position: relative;
+  color: #fff;
+  text-decoration: none;
+  font-size: 0.9rem;
+  padding: 0.4rem 0.5rem;
+  overflow: hidden;
+  white-space: nowrap;
 }
 
-.main-nav a::after,
-.side-menu a::after {
+nav a::after {
   content: "";
   position: absolute;
-  left: 0;
+  bottom: 0;
+  left: 100%;
   width: 100%;
-  bottom: -5px;
   height: 3px;
-  background: var(--text-color-light);
-  transform-origin: right;
-  transform: scaleX(0);
-  transition: transform 0.2s;
+  background-color: #fff;
+  transform: translateX(0);
+  transition: left 0.3s ease;
 }
 
-.main-nav a.active::after,
-.side-menu a.active::after {
-  transform-origin: left;
-  transform: scaleX(1);
+nav a:hover::after {
+  left: 0;
 }
 
-.main-nav a:hover,
-.side-menu a:hover,
-.main-nav a.active,
-.side-menu a.active {
-  color: var(--text-color-light);
-  font-weight: bold;
-}
-
-/* شريط البحث */
-.header-top {
-  padding-top: 5px;
+.search-bar {
   display: flex;
   align-items: center;
+  gap: 0.5rem;
   width: 100%;
   justify-content: center;
-  position: relative;
 }
 
-.logo {
-  width: 0px;
-}
-
-.logo img {
-  position: absolute;
-
-  width: 150px;
-  height: 150px;
-  top: -40px;
-  left: 1%;
-}
-
-.search-con {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 30px;
-  max-width: 500px;
+.search-bar input {
+  padding: 0.5rem  1rem;
+  border-radius: 10px;
+  border: none;
+  outline: none;
   width: 50%;
+  max-width: 450px;
+  min-width: 220px;
   transition: 0.3s ease-in-out;
 }
 
-.search-inp {
+.search-bar input:focus {
+  width: 60%;
+  max-width: 500px;
+}
+
+.search-bar button {
+  background: transparent;
   border: none;
-  outline: none;
-  padding: 5px;
-  color: var(--text-color-dark);
-  caret-color: var(--primary-color);
-  height: 35px;
-  width: calc(100% - 35px);
-  background: var(--color-white);
+  cursor: pointer;
+  font-size: 1.2rem;
+  color: #fff;
+  height: 41px;
+  width: 41px;
+  border-radius: 10px;
   transition: 0.2s ease-in-out;
 }
-.search-btn {
-  border: 0;
-  outline: none;
-  background: var(--shade-4);
-  padding: 5px;
-  color: var(--text-color-light);
-  height: 35px;
-  width: 40px;
+.search-bar button:hover {
+  background: #fff;
+  color: #e65c00;
+}
+
+.burger-menu {
+  display: none;
   cursor: pointer;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: 0.1s ease-in-out;
+  font-size: 1.5rem;
 }
 
-.menu-btn {
-  margin-right: 5px;
-  display: none;
-  background-color: var(--shade-4);
-  color: var(--text-color-light);
-  border: none;
-  width: 40px;
-  height: 35px;
-  cursor: pointer;
-  transition: 0.1s ease-in-out;
-  margin-left: 20px;
+.burger-menu.active {
+  display: block;
 }
-
-/* تنسيق القائمة الجانبية */
-.side-menu {
-  display: none;
-}
-
-.side-menu {
-  background: #e15215cd;
-  backdrop-filter: blur(2px);
-  display: flex;
-  flex-direction: column;
-  position: absolute;
-  width: 100%;
-  height: 100vh;
-  left: 50%;
-  top: 50px;
-  align-items: end;
-  padding-right: 20px;
-  transform: translateY(-50%) scale(0);
-  transition: all 0.2s ease-in-out;
-}
-
-.side-menu.visible {
-  left: 0px;
-  transform: translateY(0) scale(1);
-}
-
-.side-nav,
-.side-menu {
-  display: none;
+.burger-menu ul {
   list-style: none;
-}
-
-.side-nav li,
-.side-menu li {
-  padding: 5px;
-  display: flex;
-  align-items: center;
-  transition: 0.3s ease-in-out;
-}
-
-.side-nav a,
-.side-menu a {
-  text-decoration: none;
-  padding: 0 10px;
-  color: #ccc;
-  font-size: 1rem;
-  transition: color 0.3s ease, background-color 0.3s ease;
-  position: relative;
-}
-
-.side-nav a::after,
-.side-menu a::after {
-  content: "";
   position: absolute;
+  top: 60px;
   left: 0;
+  background-color: #ff6600;
   width: 100%;
-  bottom: -5px;
-  height: 3px;
-  transform-origin: right;
-  transform: scaleX(0);
-  transition: transform 0.2s ease;
+  padding: 10px;
+  margin: 0;
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: 0.3s ease;
+  display: none;
+  overflow: hidden;
 }
 
-.side-nav a.active::after,
-.side-menu a.active::after {
-  transform-origin: right;
-  transform: scaleX(1);
+.burger-menu ul.active {
+  transform: scaleY(1);
+  display: block;
 }
 
-.side-nav a:hover,
-.side-menu a:hover,
-.side-nav a.active,
-.side-menu a.active {
-  color: var(--text-color-light);
-  font-weight: bold;
+.burger-menu ul li {
+  padding: 10px;
+  text-align: center;
 }
 
-/*  =================== */
+.burger-menu ul li a {
+  display: block;
+  color: #fff;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 0.7rem 1.5rem;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  text-align: center;
+}
 
-@media (max-width: 600px) {
-  header {
-    padding-bottom: 10px;
-  }
+.burger-menu ul li a:hover {
+  color: #e65c00;
+  background-color: #fff;
+}
 
-  header.header-hidden {
-    background: #e15215b6;
-  }
-
-  .header-top {
-    gap: 10px;
-  }
-
-  .search-con {
-   width: 80%;
-  }
-
-  .logo {
-    width: 100px;
-  }
-
-  .logo img {
-    width: 100px;
-    height: 100px;
-    top: -30px;
-    left: -5px;
-  }
-
-  .main-nav {
+.burger-menu ul li a:active {
+  background-color: #cc5200;
+  transform: translateY(2px);
+}
+/* الشاشات الصغيرة (المحمولة) */
+@media (max-width: 850px) {
+  header nav {
     display: none;
   }
 
-  .menu-btn,
-  .side-nav,
-  .side-menu {
+  .burger-menu {
     display: block;
   }
+
+  .burger-menu ul {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background-color: #ff6600;
+    padding: 10px;
+    display: none;
+  }
 }
+
+/* end header ============================================  */
 
 footer {
   background-color: var(--color-gray);
@@ -329,20 +246,3 @@ footer p {
   color: var(--text-color-light);
   padding: 1rem;
 }
-
-/* fast css  */
-
-.btn-f,
-.btn {
-  border-bottom: 5px solid rgba(0, 0, 0, 0.15);
-}
-
-.btn:active,
-.btn-f:focus {
-  margin-top: 7px;
-  height: calc(100% - 2px);
-  border-bottom: 2px solid #00000016;
-}
-
-/* end  */
-

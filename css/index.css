@@ -18,8 +18,8 @@
 .hero-content {
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(10px);
-  border-bottom: 5px solid rgba(255, 255, 255, 0.1);
   padding: 30px;
+  border-radius: 10px;
 }
 
 .hero-content h1,
@@ -39,12 +39,12 @@
 }
 
 .hero-content .hero-btn {
-  box-shadow: 0 5px 0px rgba(0, 0, 0, 0.15);
   color: var(--font-color-1);
   padding: 0.75rem 2rem;
   font-size: 1rem;
   background: rgba(0, 0, 0, 0.2);
   transition: all 0.3s ease;
+  border-radius: 5px;
 }
 
 .hero-content .hero-btn:active {
@@ -105,9 +105,10 @@
     var(--color-white) 50%,
     rgba(255, 255, 255, 0.5) 100%
   );
-  box-shadow: 0 5px 0px rgba(0, 0, 0, 0.15);
+  box-shadow: -1px 1px 0px rgba(0, 0, 0, 0.15);
   transition: all 0.3s ease;
   min-width: 130px;
+  border-radius: 5px;
 }
 
 .category-card:hover {
@@ -119,6 +120,7 @@
   width: 90%;
   height: auto;
   margin-bottom: 0.5rem;
+  border-radius: 2.5px;
 }
 
 .category-card h3 {
@@ -311,8 +313,8 @@
 .offer-content {
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(10px);
-  border-bottom: 10px solid rgba(255, 255, 255, 0.1);
-  padding: 30px 60px;
+  padding: 30px;
+  border-radius: 10px;
 }
 
 .offer-content h1 {
@@ -326,15 +328,15 @@
 }
 
 .offer-content .offer-btn {
-  box-shadow: 0 5px 0px rgba(0, 0, 0, 0.15);
   color: var(--font-color-1);
   padding: 0.75rem 2rem;
   font-size: 1rem;
   background: rgba(0, 0, 0, 0.2);
   transition: all 0.3s ease;
+  border-radius: 5px;
 }
 
-.offer-content .offer-btn:hover {
+.offer-content .offer-btn:active {
   background: rgba(0, 0, 0, 0.5);
 }
 
@@ -419,7 +421,8 @@
   justify-content: center;
   align-items: center;
   padding: 10px;
-  box-shadow: -10px 10px 0px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  box-shadow: -5px 10px 10px rgba(0, 0, 0, 0.1);
 }
 
 .feature-box-front {
@@ -428,8 +431,9 @@
 }
 
 .feature-box-front:hover{
-  border: 5px solid var(--main-color);
+  border: 3px solid var(--main-color);
 }
+
 
 .feature-box-back {
   background: var(--main-color);

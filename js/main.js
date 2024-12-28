@@ -1,90 +1,42 @@
-// التحكم في القائمة الجانبية ============================================================================================================
 
-const MenuButton = document.getElementById("menu-btn");
-const sideMenu = document.getElementById("side-menu");
+// header ========================================================================
 
-function oac_menu() {
-  sideMenu.classList.toggle("visible");
-}
+// تحديد المتغيرات
+const burgerMenu = document.querySelector(".burger-menu");
+const menuList = document.querySelector(".burger-menu ul");
 
-// تنقل الصفحات مع تأثير الانتقال ============================================================================================================
+// عند الضغط على الزر، قم بالتبديل بين الفتح والإغلاق
+burgerMenu.addEventListener("click", (event) => {
+  event.stopPropagation(); // منع تأثير النقر على العنصر نفسه
+  const isActive = menuList.classList.contains("active");
 
-const navigationLinks = document.querySelectorAll(".main-nav a");
-
-navigationLinks.forEach((navLink) => {
-  navLink.addEventListener("click", (event) => {
-    event.preventDefault();
-
-    navigationLinks.forEach((link) => link.classList.remove("active"));
-
-    navLink.classList.add("active");
-
+  if (isActive) {
+    menuList.classList.remove("active");
     setTimeout(() => {
-      window.location.href = navLink.href;
-    }, 160);
-  });
-});
-
-// ==================
-
-document.addEventListener("DOMContentLoaded", function () {
-  // الحصول على جميع الروابط داخل القائمة الجانبية
-  const navigationLinks = document.querySelectorAll("#side-menu a");
-
-  // الحصول على مسار الصفحة الحالية
-  const currentPagePath = window.location.pathname;
-
-  // التحقق من كل رابط وإضافة أو إزالة صنف "active-link" بناءً على الصفحة الحالية
-  navigationLinks.forEach((navLink) => {
-    // إذا كان href الخاص بالرابط يتضمن مسار الصفحة الحالية
-    if (navLink.href.includes(currentPagePath)) {
-      navLink.classList.add("active"); // إضافة الصنف "active-link" للرابط النشط
-    } else {
-      navLink.classList.remove("active"); // إزالة الصنف "active-link" من الروابط الأخرى
-    }
-
-    navLink.addEventListener("click", (event) => {
-      event.preventDefault();
-
-      navigationLinks.forEach((link) => link.classList.remove("active"));
-
-      navLink.classList.add("active");
-
-      setTimeout(() => {
-        window.location.href = navLink.href;
-      }, 160);
-    });
-  });
-});
-
-// تعيين الرابط النشط عند تحميل الصفحة بناءً على الموقع الحالي ============================================================================================================
-
-const currentPagePath = window.location.pathname;
-
-navigationLinks.forEach((navLink) => {
-  if (navLink.href.includes(currentPagePath)) {
-    navLink.classList.add("active");
+      menuList.style.display = "none"; // إخفاء العنصر بعد انتهاء الأنميشن
+    }, 300); // نفس مدة الأنميشن (0.3 ثانية)
   } else {
-    navLink.classList.remove("active");
+    menuList.style.display = "block"; // عرض العنصر قبل بدء الأنميشن
+    setTimeout(() => {
+      menuList.classList.add("active");
+    }, 10); // تأخير بسيط لضمان تطبيق الأنميشن
   }
 });
 
-// =================
-
-document.addEventListener("DOMContentLoaded", function () {
-  // الحصول على جميع الروابط داخل القائمة الجانبية
-  const navigationLinks = document.querySelectorAll("#side-menu a");
-
-  // الحصول على مسار الصفحة الحالية
-  const currentPagePath = window.location.pathname;
-
-  // التحقق من كل رابط وإضافة أو إزالة صنف "active-link"
-  navigationLinks.forEach((navLink) => {
-    // إذا كان href الخاص بالرابط يتضمن مسار الصفحة الحالية
-    if (navLink.href.includes(currentPagePath)) {
-      navLink.classList.add("active"); // إضافة الصنف "active-link"
-    } else {
-      navLink.classList.remove("active"); // إزالة الصنف "active-link" من الروابط الأخرى
-    }
-  });
+// إغلاق القائمة عند النقر خارجها
+window.addEventListener("click", (event) => {
+  if (!burgerMenu.contains(event.target) && !menuList.contains(event.target)) {
+    menuList.classList.remove("active");
+    setTimeout(() => {
+      menuList.style.display = "none";
+    }, 300);
+  }
 });
+
+// Scroll Header Effect
+window.addEventListener("scroll", function () {
+  const header = document.querySelector("header");
+  header.classList.toggle("scrolled", window.scrollY > 0);
+});
+
+// end header ========================================================================
