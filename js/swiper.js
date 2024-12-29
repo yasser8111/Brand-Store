@@ -11,16 +11,15 @@ const swiperCategoty = new Swiper(".swiper-categoty", {
   spaceBetween: 20,
   breakpoints: {
     1264: {
-      slidesPerView: 7, // عرض 3 منتجات
+      slidesPerView: 5, // عرض 3 منتجات
     },
     1024: {
-      slidesPerView: 6, // عرض 3 منتجات
+      slidesPerView: 4, // عرض 3 منتجات
     },
     768: {
       slidesPerView: 5, // عرض منتجين
     },
     624: {
-      spaceBetween: 15,
       slidesPerView: 4, // عرض منتج واحد فقط
     },
   },

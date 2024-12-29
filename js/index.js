@@ -55,72 +55,61 @@ window.onload = function () {
 // add products ============================================================================================================
 
 document.addEventListener("DOMContentLoaded", () => {
-  // تحديد عدد المنتجات التي سيتم عرضها أولاً
-  const productsPerPage = 3;
-  let currentIndex = 0;
-
+  // جلب البيانات من الملف JSON
   fetch("../data.json")
-    .then((response) => response.json())
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error("Network response was not ok " + response.statusText);
+      }
+      return response.json();
+    })
     .then((products) => {
-      const productsGrid = document.querySelector(".products-grid");
+      const productContainer = document.querySelector(".product-container");
 
-      // تصفية المنتجات الأكثر مبيعًا فقط
-      const bestSellerProducts = products.filter(product => product.best_seller);
+      if (!productContainer) {
+        console.error("لم يتم العثور على عنصر .product-container");
+        return;
+      }
 
-      // دالة لعرض مجموعة من المنتجات
-      const displayProducts = (startIndex, endIndex) => {
-        for (let i = startIndex; i < endIndex; i++) {
-          if (i >= bestSellerProducts.length) break; // إذا وصلنا إلى نهاية المنتجات
+      // عرض جميع المنتجات بدون تصفية
+      products.forEach((product) => {
+        const productCard = document.createElement("div");
+        productCard.classList.add("product-card");
 
-          const product = bestSellerProducts[i];
-          const productCard = document.createElement("div");
-          productCard.classList.add("product-card");
-          productCard.setAttribute("data-index", i);
-
-          productCard.innerHTML = `
-            <a href="../html/product-details.html" class="product-link">
-              <img src="${product.images[0]}" alt="${product.name}" />
-            </a>
-            <h3 class="product-name">${product.name}</h3>
-            <p class="description">${product.description}</p>
-            <div class="price">
-              <p>${product.price}$</p>
-              <p class="old-price">${product.old_price}$</p>
+        // بناء المنتج كعنصر HTML
+        productCard.innerHTML = `
+          <img src="${product.images[0]}" alt="${product.name}" />
+          <div class="product-info">
+            <div class="product-name">${product.name}</div>
+            <div class="product-description">
+              ${product.description}
             </div>
-          `;
+            <div class="price-container">
+              <span class="old-price">${product.old_price}</span>
+              <span class="price">${product.price}</span>
+            </div>
+            <div class="product-actions">
+              <button class="add-to-cart">
+                <i class="fa-solid fa-cart-shopping"></i>
+              </button>
+              <button class="buy-now">Buy Now</button>
+            </div>
+          </div>
+        `;
 
-          // إضافة المنتج إلى الـ DOM
-          productsGrid.appendChild(productCard);
+        // إضافة المنتج إلى DOM
+        productContainer.appendChild(productCard);
 
-          // عند الضغط على المنتج، حفظ التفاصيل في localStorage
-          productCard.addEventListener("click", () => {
-            localStorage.setItem("selectedProduct", JSON.stringify(product));
-          });
-        }
-      };
-
-      // عرض أول مجموعة من المنتجات
-      displayProducts(currentIndex, currentIndex + productsPerPage);
-
-      // التعامل مع الضغط على زر "المزيد"
-      const loadMoreBtn = document.getElementById("loadMoreBtn");
-      loadMoreBtn.addEventListener("click", () => {
-        currentIndex += productsPerPage; // زيادة الفهرس لعرض مجموعة جديدة من المنتجات
-        displayProducts(currentIndex, currentIndex + productsPerPage); // عرض مجموعة جديدة
-
-        // إخفاء الزر إذا لم يتبق المزيد من المنتجات
-        if (currentIndex >= bestSellerProducts.length) {
-          loadMoreBtn.style.display = "none";
-        }
+        // عند الضغط على المنتج، حفظ التفاصيل في localStorage
+        productCard.addEventListener("click", () => {
+          localStorage.setItem("selectedProduct", JSON.stringify(product));
+        });
       });
     })
     .catch((error) => console.error("خطأ في جلب المنتجات:", error));
 });
 
-
-
-
 function toggleFlip(element) {
-  const inner = element.querySelector('.feature-box-inner');
-  inner.classList.toggle('clicked');
+  const inner = element.querySelector(".feature-box-inner");
+  inner.classList.toggle("clicked");
 }

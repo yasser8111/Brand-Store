@@ -220,27 +220,5 @@
       "../img/headphones.webp",
       "../img/headphones.webp"
     ]
-  },
-  {
-    "id": 3,
-    "name": "سماعات Bose QuietComfort 45",
-    "description": "سماعات Bose تمنحك جودة صوت مذهلة مع ميزة إلغاء الضوضاء...",
-    "type": "سماعات",
-    "best_seller": true,
-    "in_stock": false,
-    "specifications": [
-      { "name": "الوزن", "value": "0.5 كجم" },
-      { "name": "الاتصال", "value": "بلوتوث 5.1" },
-      { "name": "البطارية", "value": "حتى 24 ساعة" },
-      { "name": "الشحن", "value": "منفذ USB-C" }
-    ],
-    "colors": ["black", "white"],
-    "price": 299,
-    "old_price": 350,
-    "images": [
-      "../img/headphones.webp",
-      "../img/headphones.webp",
-      "../img/headphones.webp"
-    ]
   }
 ]
