@@ -52,8 +52,6 @@ window.onload = function () {
   });
 };
 
-// add products ============================================================================================================
-
 document.addEventListener("DOMContentLoaded", () => {
   // جلب البيانات من الملف JSON
   fetch("../data.json")
@@ -100,7 +98,57 @@ document.addEventListener("DOMContentLoaded", () => {
         // إضافة المنتج إلى DOM
         productContainer.appendChild(productCard);
 
-        // عند الضغط على المنتج، حفظ التفاصيل في localStorage
+        // عند الضغط على زر الإضافة إلى السلة
+        productCard.querySelector(".add-to-cart").addEventListener("click", (event) => {
+          event.stopPropagation(); // منع انتقال الحدث إلى العنصر الرئيسي
+
+          // جلب السلة الحالية من localStorage
+          let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+          // التحقق إذا كان المنتج موجودًا في السلة
+          const existingProductIndex = cart.findIndex((item) => item.id === product.id);
+
+          if (existingProductIndex !== -1) {
+            // إذا كان المنتج موجودًا، نقوم بزيادة الكمية
+            cart[existingProductIndex].quantity += 1;
+          } else {
+            // إذا لم يكن المنتج موجودًا، نضيفه مع كمية 1
+            product.quantity = 1;
+            cart.push(product);
+          }
+
+          // حفظ السلة في localStorage
+          localStorage.setItem("cart", JSON.stringify(cart));
+          alert(`${product.name} تم إضافته إلى السلة!`);
+        });
+
+        // عند الضغط على زر "Buy Now" لإضافة المنتج إلى السلة والانتقال إلى صفحة السلة
+        productCard.querySelector(".buy-now").addEventListener("click", (event) => {
+          event.stopPropagation(); // منع انتقال الحدث إلى العنصر الرئيسي
+
+          // جلب السلة الحالية من localStorage
+          let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+          // التحقق إذا كان المنتج موجودًا في السلة
+          const existingProductIndex = cart.findIndex((item) => item.id === product.id);
+
+          if (existingProductIndex !== -1) {
+            // إذا كان المنتج موجودًا، نقوم بزيادة الكمية
+            cart[existingProductIndex].quantity += 1;
+          } else {
+            // إذا لم يكن المنتج موجودًا، نضيفه مع كمية 1
+            product.quantity = 1;
+            cart.push(product);
+          }
+
+          // حفظ السلة في localStorage
+          localStorage.setItem("cart", JSON.stringify(cart));
+
+          // الانتقال إلى صفحة السلة بعد إضافة المنتج
+          window.location.href = "./html/cart.html"; // تأكد من تعديل هذا الرابط ليكون صفحة السلة الفعلية
+        });
+
+        // عند الضغط على المنتج بالكامل
         productCard.addEventListener("click", () => {
           localStorage.setItem("selectedProduct", JSON.stringify(product));
         });
@@ -108,6 +156,10 @@ document.addEventListener("DOMContentLoaded", () => {
     })
     .catch((error) => console.error("خطأ في جلب المنتجات:", error));
 });
+
+
+
+// feature ===============================================================================
 
 function toggleFlip(element) {
   const inner = element.querySelector(".feature-box-inner");

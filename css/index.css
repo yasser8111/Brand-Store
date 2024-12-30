@@ -80,6 +80,8 @@
   animation: fadeIn 0.8s ease-in-out;
   background: var(--font-color-1);
   overflow: hidden;
+  max-width: 1200px;
+  margin: auto;
 }
 
 .categories .section-title {
@@ -90,7 +92,7 @@
 }
 
 .swiper-categoty {
-  padding: 20px;
+  padding: 17px;
 }
 
 .category-card {
@@ -443,6 +445,8 @@
 .about-section {
   color: var(--main-color);
   text-align: center;
+  max-width: 1200px;
+  margin: auto;
 }
 
 .about-section h2 {

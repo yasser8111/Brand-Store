@@ -18,109 +18,87 @@
   </head>
   <body>
     <header>
-      <a href="../index.html">
-        <img src="../img/icon/logo.png" alt="Brand Logo" />
-      </a>
-      <div class="search-bar">
-        <input type="text" placeholder="Search..." />
-        <button><i class="fas fa-search"></i></button>
-      </div>
-      <nav>
-        <a href="../index.html">الرئيسية</a>
-        <a href="./products.html" class="active">المنتجات</a>
-        <a href="./offers.html">العروض</a>
-        <a href="./cart.html">السله</a>
-        <a href="./login.html">تسجيل دخول</a>
-      </nav>
-      <div class="burger-menu">
-        <i class="fas fa-bars"></i>
-        <ul>
-          <li><a href="../index.html">الرئيسية</a></li>
-          <li><a href="./products.html">المنتجات</a></li>
-          <li><a href="./offers.html">العروض</a></li>
-          <li><a href="./cart.html">السله</a></li>
-          <li><a href="./login.html">تسجيل دخول</a></li>
-        </ul>
+      <div class="container">
+        <a href="../index.html">
+          <img src="../img/icon/logo.png" alt="Brand Logo" />
+        </a>
+        <div class="search-bar">
+          <input type="text" placeholder="Search..." />
+          <button><i class="fas fa-search"></i></button>
+        </div>
+        <nav>
+          <a href="../index.html">الرئيسية</a>
+          <a href="./products.html" class="active">المنتجات</a>
+          <a href="./offers.html">العروض</a>
+          <a href="./cart.html">السله</a>
+          <a href="./login.html">تسجيل دخول</a>
+        </nav>
+        <div class="burger-menu">
+          <i class="fas fa-bars"></i>
+          <ul>
+            <li><a href="../index.html">الرئيسية</a></li>
+            <li><a href="./products.html">المنتجات</a></li>
+            <li><a href="./offers.html">العروض</a></li>
+            <li><a href="./cart.html">السله</a></li>
+            <li><a href="./login.html">تسجيل دخول</a></li>
+          </ul>
+        </div>
       </div>
     </header>
 
     <main>
-      <section class="filter-section">
-        <button class="filter-button">
-          <i class="fa-solid fa-filter"></i>
-          فلتر
-        </button>
-        <div class="overlay"></div>
-        <div class="filter-menu">
-          <!-- عناصر القائمة -->
-          <div class="filter-item" data-icon="fa-solid fa-laptop">
-            <i class="fa-solid fa-laptop"></i>
-            <span>أجهزة</span>
-          </div>
-          <div class="filter-item" data-icon="fa-solid fa-mobile-alt">
-            <i class="fa-solid fa-mobile-alt"></i>
-            <span>هواتف</span>
-          </div>
-          <div class="filter-item" data-icon="fa-solid fa-headphones">
-            <i class="fa-solid fa-headphones"></i>
-            <span>إكسسوارات</span>
-          </div>
-          <div class="filter-item" data-icon="fa-solid fa-tv">
-            <i class="fa-solid fa-tv"></i>
-            <span>شاشات</span>
-          </div>
-          <div class="filter-item" data-icon="fa-solid fa-camera">
-            <i class="fa-solid fa-camera"></i>
-            <span>كاميرات</span>
-          </div>
-          <div class="filter-item" data-icon="fa-solid fa-gamepad">
-            <i class="fa-solid fa-gamepad"></i>
-            <span>ألعاب</span>
-          </div>
+      <div class="filter" id="filter">
+        <div class="filter-content">
+          <h3>فلتر البحث</h3>
+          <form id="filterForm">
+            <div class="filter-item">
+              <label for="category">الفئة</label>
+              <select id="category" name="category">
+                <option value="all">الكل</option>
+                <option value="electronics">إلكترونيات</option>
+                <option value="clothing">ملابس</option>
+                <option value="home">منزل</option>
+              </select>
+            </div>
 
-          <!-- اختيار اللون -->
-          <div class="color-picker">
-            <div
-              class="color-option"
-              style="background-color: #4fa4ff"
-              data-color="#007bff"
-            ></div>
-            <div
-              class="color-option"
-              style="background-color: #28a745"
-              data-color="#28a745"
-            ></div>
-            <div
-              class="color-option"
-              style="background-color: #ffc107"
-              data-color="#ffc107"
-            ></div>
-            <div
-              class="color-option"
-              style="background-color: #dc3545"
-              data-color="#dc3545"
-            ></div>
-            <div
-              class="color-option"
-              style="background-color: #f5f5f5"
-              data-color="#dadada"
-            ></div>
-            <div
-              class="color-option"
-              style="background-color: #383838"
-              data-color="#383838"
-            ></div>
-          </div>
+            <div class="filter-item">
+              <label for="brand">العلامة التجارية</label>
+              <select id="brand" name="brand">
+                <option value="all">الكل</option>
+                <option value="apple">آبل</option>
+                <option value="nike">نايك</option>
+                <option value="samsung">سامسونج</option>
+              </select>
+            </div>
+
+            <div class="filter-item">
+              <label for="price">السعر</label>
+              <input
+                type="range"
+                id="price"
+                name="price"
+                min="0"
+                max="1000"
+                value="500"
+              />
+              <span id="priceValue">500</span>
+            </div>
+
+            <button type="submit">تصفية</button>
+          </form>
         </div>
-      </section>
+      </div>
 
       <section class="products">
-        <h2 class="section-title">المنتجات الأكثر مبيعًا</h2>
-        <div class="products-grid">
-          <!-- سيتم إضافة المنتجات ديناميكيًا هنا -->
+        <h2 class="section-title">المنتجات</h2>
+
+        <div class="content">
+          <!-- زر لإظهار الفلتر في الشاشات الصغيرة -->
+          <button class="filter-toggle" id="filterToggle">عرض الفلتر</button>
         </div>
-        <div class="more">
-          <button class="btn" id="loadMoreBtn">...المزيد</button>
+
+        <div class="product-container">
+          <!-- هنا يتم عرض المنتجات -->
         </div>
       </section>
 
@@ -141,10 +119,9 @@
       </section>
     </main>
 
-    <div class="circles">
-      <div class="background-circle1"></div>
-      <div class="background-circle2"></div>
-    </div>
+    <div class="sticker sticker1"></div>
+    <div class="sticker sticker2"></div>
+    <div class="sticker sticker3"></div>
 
     <footer>
       <div class="container">

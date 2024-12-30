@@ -18,71 +18,70 @@
 
   <body>
     <header>
-      <a href="../index.html">
-        <img src="../img/icon/logo.png" alt="Brand Logo" />
-      </a>
-      <div class="search-bar">
-        <input type="text" placeholder="Search..." />
-        <button><i class="fas fa-search"></i></button>
-      </div>
-      <nav>
-        <a href="../index.html">الرئيسية</a>
-        <a href="./products.html" >المنتجات</a>
-        <a href="./offers.html" >العروض</a>
-        <a href="./cart.html" class="active">السله</a>
-        <a href="./login.html">تسجيل دخول</a>
-      </nav>
-      <div class="burger-menu">
-        <i class="fas fa-bars"></i>
-        <ul>
-          <li><a href="../index.html">الرئيسية</a></li>
-          <li><a href="./products.html">المنتجات</a></li>
-          <li><a href="./offers.html">العروض</a></li>
-          <li><a href="./cart.html">السله</a></li>
-          <li><a href="./login.html">تسجيل دخول</a></li>
-        </ul>
+      <div class="container">
+        <a href="../index.html">
+          <img src="../img/icon/logo.png" alt="Brand Logo" />
+        </a>
+        <div class="search-bar">
+          <input type="text" placeholder="Search..." />
+          <button><i class="fas fa-search"></i></button>
+        </div>
+        <nav>
+          <a href="../index.html">الرئيسية</a>
+          <a href="./products.html">المنتجات</a>
+          <a href="./offers.html">العروض</a>
+          <a href="./cart.html" class="active">السله</a>
+          <a href="./login.html">تسجيل دخول</a>
+        </nav>
+        <div class="burger-menu">
+          <i class="fas fa-bars"></i>
+          <ul>
+            <li><a href="../index.html">الرئيسية</a></li>
+            <li><a href="./products.html">المنتجات</a></li>
+            <li><a href="./offers.html">العروض</a></li>
+            <li><a href="./cart.html">السله</a></li>
+            <li><a href="./login.html">تسجيل دخول</a></li>
+          </ul>
+        </div>
       </div>
     </header>
 
-    <main class="cart-container">
-      <!-- المنتجات -->
-      <section class="cart-items">
-        <h2>المنتجات في السلة</h2>
-        <div class="cart-item">
-          <img src="../img/camera.jpg" alt="منتج" class="product-image" />
-          <div class="item-details">
-            <h3 class="product-name">اسم المنتج</h3>
-            <p class="description">وصف مختصر للمنتج</p>
-            <p class="price">السعر: <span>100$</span></p>
-            <div class="quantity-control">
-              <button class="btn-quantity decrease">-</button>
-              <span class="quantity">1</span>
-              <button class="btn-quantity increase">+</button>
-            </div>
-            <button class="remove-btn">🗑️ إزالة</button>
-          </div>
-        </div>
-      </section>
+    <div class="cart-container">
+      <div class="cart-items">
 
-      <!-- ملخص الطلب -->
-      <section class="cart-summary">
-        <h2>ملخص الطلب</h2>
-        <div class="summary-item">
-          <p>الإجمالي الفرعي:</p>
-          <p><span>100$</span></p>
+        <div class="cart-item">
+          <img src="../img/phone.jpg" alt="اسم المنتج" />
+          <div class="item-details">
+            <div class="product-name">اسم المنتج</div>
+            <div class="product-description">وصف مختصر للمنتج هنا.</div>
+          </div>
+          <div class="quantity-container">
+            <button>-</button>
+            <input type="text" value="1" readonly />
+            <button>+</button>
+          </div>
+          <span class="product-price">100 ريال</span>
+          <button class="remove-button">حذف</button>
         </div>
-        <div class="summary-item">
-          <p>الضريبة:</p>
-          <p><span>5$</span></p>
+        
+        <!-- سيتم ملء هذه الحاوية بعناصر السلة عبر JavaScript -->
+      </div>
+      
+      <div class="cart-summary">
+        <h2>ملخص السلة</h2>
+        <p>الإجمالي الفرعي: <span id="subtotal-price">0</span> ريال</p>
+        <p>الخصم: <span id="discount-amount">0</span> ريال</p>
+        <p>الإجمالي النهائي: <span id="total-price">0</span> ريال</p>
+    
+        <div class="coupon-section">
+          <input type="text" id="coupon-code" placeholder="أدخل الكود">
+          <button id="apply-coupon">تطبيق</button>
         </div>
-        <div class="summary-item total">
-          <p>الإجمالي الكلي:</p>
-          <p><span>105$</span></p>
-        </div>
-        <button class="checkout-btn">إتمام الطلب</button>
-        <button class="continue-shopping-btn">متابعة التسوق</button>
-      </section>
-    </main>
+        
+        <button id="checkout-button">إتمام الطلب</button>
+      </div>
+    </div>
+    
 
     <!-- الفوتر -->
     <footer>

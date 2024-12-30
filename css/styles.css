@@ -36,14 +36,23 @@ header {
   color: #fff;
   padding: 0.5rem 1rem;
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   position: sticky;
   top: 0;
   z-index: 1000;
   transition: all 0.3s ease;
+  
+}
+
+header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1200px;
   gap: 0.5rem;
 }
+
 
 header.scrolled {
   background-color: var(--shade-1);
@@ -181,14 +190,11 @@ nav a:hover::after {
   margin: 0;
   transform: scaleY(0);
   transform-origin: top;
-  transition: 0.3s ease;
-  display: none;
-  overflow: hidden;
+  transition: 0.3s  cubic-bezier(1, 0, 0, 1);
 }
 
 .burger-menu ul.active {
   transform: scaleY(1);
-  display: block;
 }
 
 .burger-menu ul li {
