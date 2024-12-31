@@ -12,6 +12,7 @@ document.getElementById("filterToggle").addEventListener("click", function () {
 });
 
 // add products ============================================================================================================
+
 document.addEventListener("DOMContentLoaded", () => {
   // جلب البيانات من الملف JSON
   fetch("../data.json")

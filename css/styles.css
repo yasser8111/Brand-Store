@@ -41,7 +41,6 @@ header {
   top: 0;
   z-index: 1000;
   transition: all 0.3s ease;
-  
 }
 
 header .container {
@@ -52,7 +51,6 @@ header .container {
   max-width: 1200px;
   gap: 0.5rem;
 }
-
 
 header.scrolled {
   background-color: var(--shade-1);
@@ -123,7 +121,6 @@ nav a:hover::after {
   outline: none;
   width: 50%;
   max-width: 450px;
-  min-width: 220px;
   transition: 0.3s ease-in-out;
 }
 
@@ -190,7 +187,7 @@ nav a:hover::after {
   margin: 0;
   transform: scaleY(0);
   transform-origin: top;
-  transition: 0.3s  cubic-bezier(1, 0, 0, 1);
+  transition: 0.3s cubic-bezier(1, 0, 0, 1);
 }
 
 .burger-menu ul.active {
@@ -214,10 +211,6 @@ nav a:hover::after {
   text-align: center;
 }
 
-.burger-menu ul li a:hover {
-  color: #e65c00;
-  background-color: #fff;
-}
 /* الشاشات الصغيرة (المحمولة) */
 @media (max-width: 850px) {
   header {
@@ -234,13 +227,8 @@ nav a:hover::after {
 
   .search-bar input {
     padding: 0.5rem 1rem;
-    border-radius: 8px;
-    border: none;
-    outline: none;
     width: 50%;
     max-width: 450px;
-    min-width: 220px;
-    transition: 0.3s ease-in-out;
   }
 
   .search-bar input:focus {
@@ -255,6 +243,75 @@ nav a:hover::after {
 
   .burger-menu {
     display: block;
+  }
+}
+
+@media (max-width: 450px) {
+  header {
+    padding: 0.3rem 0.5rem;
+  }
+
+  header a img {
+    width: 40px;
+    height: auto;
+    margin-right: 0.5rem;
+  }
+  .search-bar {
+    gap: 0.2rem;
+  }
+  .search-bar input {
+    padding: 0.5rem 0.5rem;
+    height: 35px;
+    width: 70%;
+  }
+
+  .search-bar input:focus {
+    width: 80%;
+  }
+
+  .burger-menu,
+  .burger-menu i,
+  .search-bar button {
+    font-size: .8rem;
+    width: 35px;
+    height: 35px;
+  }
+
+  .burger-menu {
+    display: block;
+  }
+  
+  .burger-menu.active {
+    display: block;
+  }
+  .burger-menu ul {
+    top: 44px;
+  }
+  
+  .burger-menu ul.active {
+    transform: scaleY(1);
+  }
+  
+  .burger-menu ul li {
+    padding: 10px;
+    text-align: center;
+  }
+  
+  .burger-menu ul li a {
+    display: block;
+    color: #fff;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 0.7rem 1.5rem;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    text-align: center;
+  }
+  
+  .burger-menu ul li a:hover {
+    color: #e65c00;
+    background-color: #fff;
   }
 }
 

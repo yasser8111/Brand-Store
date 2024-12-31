@@ -8,7 +8,7 @@ const swiperCategoty = new Swiper(".swiper-categoty", {
     delay: 3000,
   },
   slidesPerView: 3,
-  spaceBetween: 20,
+  spaceBetween: 5,
   breakpoints: {
     1264: {
       slidesPerView: 5, // عرض 3 منتجات

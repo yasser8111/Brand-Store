@@ -76,88 +76,37 @@ document.addEventListener("DOMContentLoaded", () => {
 
         // بناء المنتج كعنصر HTML
         productCard.innerHTML = `
-          <img src="${product.images[0]}" alt="${product.name}" />
-          <div class="product-info">
-            <div class="product-name">${product.name}</div>
-            <div class="product-description">
-              ${product.description}
+            <img src="${product.images[0]}" alt="${product.name}" />
+            <div class="product-info">
+              <div class="product-name">${product.name}</div>
+              <div class="product-description">
+                ${product.description}
+              </div>
+              <div class="price-container">
+                <span class="old-price">${product.old_price}</span>
+                <span class="price">${product.price}</span>
+              </div>
+              <div class="product-actions">
+                <button class="add-to-cart">
+                  <i class="fa-solid fa-cart-shopping"></i>
+                </button>
+                <button class="buy-now">Buy Now</button>
+              </div>
             </div>
-            <div class="price-container">
-              <span class="old-price">${product.old_price}</span>
-              <span class="price">${product.price}</span>
-            </div>
-            <div class="product-actions">
-              <button class="add-to-cart">
-                <i class="fa-solid fa-cart-shopping"></i>
-              </button>
-              <button class="buy-now">Buy Now</button>
-            </div>
-          </div>
-        `;
+          `;
 
         // إضافة المنتج إلى DOM
         productContainer.appendChild(productCard);
 
-        // عند الضغط على زر الإضافة إلى السلة
-        productCard.querySelector(".add-to-cart").addEventListener("click", (event) => {
-          event.stopPropagation(); // منع انتقال الحدث إلى العنصر الرئيسي
-
-          // جلب السلة الحالية من localStorage
-          let cart = JSON.parse(localStorage.getItem("cart")) || [];
-
-          // التحقق إذا كان المنتج موجودًا في السلة
-          const existingProductIndex = cart.findIndex((item) => item.id === product.id);
-
-          if (existingProductIndex !== -1) {
-            // إذا كان المنتج موجودًا، نقوم بزيادة الكمية
-            cart[existingProductIndex].quantity += 1;
-          } else {
-            // إذا لم يكن المنتج موجودًا، نضيفه مع كمية 1
-            product.quantity = 1;
-            cart.push(product);
-          }
-
-          // حفظ السلة في localStorage
-          localStorage.setItem("cart", JSON.stringify(cart));
-          alert(`${product.name} تم إضافته إلى السلة!`);
-        });
-
-        // عند الضغط على زر "Buy Now" لإضافة المنتج إلى السلة والانتقال إلى صفحة السلة
-        productCard.querySelector(".buy-now").addEventListener("click", (event) => {
-          event.stopPropagation(); // منع انتقال الحدث إلى العنصر الرئيسي
-
-          // جلب السلة الحالية من localStorage
-          let cart = JSON.parse(localStorage.getItem("cart")) || [];
-
-          // التحقق إذا كان المنتج موجودًا في السلة
-          const existingProductIndex = cart.findIndex((item) => item.id === product.id);
-
-          if (existingProductIndex !== -1) {
-            // إذا كان المنتج موجودًا، نقوم بزيادة الكمية
-            cart[existingProductIndex].quantity += 1;
-          } else {
-            // إذا لم يكن المنتج موجودًا، نضيفه مع كمية 1
-            product.quantity = 1;
-            cart.push(product);
-          }
-
-          // حفظ السلة في localStorage
-          localStorage.setItem("cart", JSON.stringify(cart));
-
-          // الانتقال إلى صفحة السلة بعد إضافة المنتج
-          window.location.href = "./html/cart.html"; // تأكد من تعديل هذا الرابط ليكون صفحة السلة الفعلية
-        });
-
-        // عند الضغط على المنتج بالكامل
+        // عند الضغط على المنتج، حفظ التفاصيل في localStorage والانتقال لصفحة التفاصيل
         productCard.addEventListener("click", () => {
           localStorage.setItem("selectedProduct", JSON.stringify(product));
+          window.location.href = "./html/product-details.html"; // اسم صفحة تفاصيل المنتج
         });
       });
     })
     .catch((error) => console.error("خطأ في جلب المنتجات:", error));
 });
-
-
 
 // feature ===============================================================================
 

@@ -1,26 +1,4 @@
 
-// change images ============================================================================================================
-
-// احصل على جميع الصور المصغرة
-const thumbnails = document.querySelectorAll('.thumbnail');
-
-// احصل على الصورة الكبيرة
-const mainImage = document.getElementById('main-image');
-
-// إضافة حدث عند النقر على كل صورة مصغرة
-thumbnails.forEach((thumbnail) => {
-  thumbnail.addEventListener('click', () => {
-    // تغيير مصدر الصورة الكبيرة إلى المصدر المحدد للصورة المصغرة
-    mainImage.src = thumbnail.src;
-
-    // إزالة الفئة "active" من جميع الصور المصغرة
-    thumbnails.forEach((thumb) => thumb.classList.remove('active'));
-
-    // إضافة الفئة "active" للصورة المصغرة التي تم النقر عليها
-    thumbnail.classList.add('active');
-  });
-});
- 
 // product details ============================================================================================================
 
 document.addEventListener("DOMContentLoaded", () => {
